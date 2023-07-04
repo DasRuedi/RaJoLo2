@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject cam;
+    public GameObject player;
     public int room;
 
     public Collider hitBox;
@@ -63,6 +64,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                player.GetComponent<playerMovement>().getRoom = true;
             }
             if (room == 2)
             {
@@ -72,6 +74,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                player.GetComponent<playerMovement>().getRoom = true;
             }
             if (room == 3)
             {
@@ -81,6 +84,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = true;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                player.GetComponent<playerMovement>().getRoom = true;
             }
             if (room == 4)
             {
@@ -90,6 +94,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = true;
                 cam.GetComponent<cameraMovement>().repos = true;
+                player.GetComponent<playerMovement>().getRoom = true;
             }
         }
     }
