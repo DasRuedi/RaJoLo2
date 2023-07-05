@@ -17,18 +17,25 @@ public class playerMovement : MonoBehaviour
     public Vector3 leftMoveOffset;
     public Vector3 rightMoveOffset;
 
-    public int floor;
-    public int side;
-
     public GameObject cam;
 
     public bool inCurrRoom;
     public bool getRoom;
 
+    public int currRoom;
+
     public Vector3 enterRoom1;
-    public Vector3 enterRoom2;
+    public Vector3 enterRoom2a;
+    public Vector3 enterRoom2b;
     public Vector3 enterRoom3;
-    public Vector3 enterRoom4;
+    public Vector3 enterRoom4a;
+    public Vector3 enterRoom4b;
+
+    public Vector3 room1Pos;
+    public Vector3 room2Pos;
+    public Vector3 room3Pos;
+    public Vector3 room4PosA;
+    public Vector3 room4PosB;
 
     public float speed;
 
@@ -67,34 +74,17 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        if (transform.position.y < -1)
-        {
-            floor = -1;
-        }
-        if (transform.position.y > -1)
-        {
-            floor = 1;
-        }
-
-        if (transform.position.x < 0)
-        {
-            side = -1;
-        }
-        if (transform.position.x > 0)
-        {
-            side = 1;
-        }
 
         if (cam.GetComponent<cameraMovement>().inRoom1)
         {
             if (getRoom == true)
             {
-                if (floor == 1 && side == -1)
+                if (currRoom == 1)
                 {
                     inCurrRoom = true;
                     getRoom = false;
                 }
-                if (floor != 1 || side != -1)
+                else
                 {
                     getRoom = false;
                     inCurrRoom = false;
@@ -109,19 +99,20 @@ public class playerMovement : MonoBehaviour
                     isMoving = true;
                 }
 
-                if (transform.position.x > -1 && isMoving == true)
+                if (transform.position.y < room1Pos.y && isMoving == true)
                 {
-                    transform.Translate(Vector3.left * Time.deltaTime * speed);
+                    transform.Translate(Vector3.up * Time.deltaTime * speed);
 
                     if (transform.localScale.x > 0)
                     {
                         transform.localScale *= -1;
                     }
                 }
-                if (transform.position.x <= -1 && isMoving == true)
+                if (transform.position.y >= room1Pos.y && isMoving == true)
                 {
                     inCurrRoom = true;
                     isMoving = false;
+                    currRoom = 1;
                 }
             }
         }
@@ -130,12 +121,12 @@ public class playerMovement : MonoBehaviour
         {
             if (getRoom == true)
             {
-                if (floor == 1 && side == 1)
+                if (currRoom == 2)
                 {
                     inCurrRoom = true;
                     getRoom = false;
                 }
-                if (floor != 1 || side != 1)
+                else
                 {
                     inCurrRoom = false;
                     getRoom = false;
@@ -146,39 +137,74 @@ public class playerMovement : MonoBehaviour
             {
                 if (isMoving == false)
                 {
-                    transform.position = enterRoom2;
-                    isMoving = true;
-                }
-
-                if (transform.position.x < 1 && isMoving == true)
-                {
-                    transform.Translate(Vector3.right * Time.deltaTime * speed);
-
-                    if (transform.localScale.x < 0)
+                    if (currRoom == 1)
                     {
-                        transform.localScale *= -1;
+                        transform.position = enterRoom2a;
+                        isMoving = true;
+                    }
+                    if (currRoom != 1 && currRoom != 2)
+                    {
+                        transform.position = enterRoom2b;
+                        isMoving = true;
                     }
                 }
-                if (transform.position.x >= 1 && isMoving == true)
+
+                if (isMoving == true)
                 {
-                    inCurrRoom = true;
-                    isMoving = false;
+                    if (currRoom == 1)
+                    {
+                        if (transform.position.y > room2Pos.y)
+                        {
+                            transform.Translate(Vector3.down * Time.deltaTime * speed);
+
+                            if (transform.localScale.x > 0)
+                            {
+                                transform.localScale *= -1;
+                            }
+                        }
+
+                        if (transform.position.y <= room2Pos.y && transform.position.x <= room2Pos.x)
+                        {
+                            inCurrRoom = true;
+                            isMoving = false;
+                            currRoom = 2;
+                        }
+                    }
+                    if (currRoom != 1 || currRoom != 2)
+                    {
+                        if (transform.position.x > room2Pos.x)
+                        {
+                            transform.Translate(Vector3.left * Time.deltaTime * speed);
+
+                            if (transform.localScale.x > 0)
+                            {
+                                transform.localScale *= -1;
+                            }
+                        }
+                        if (transform.position.x <= room2Pos.x && transform.position.y <= room2Pos.y)
+                        {
+                            inCurrRoom = true;
+                            isMoving = false;
+                            currRoom = 2;
+                        }
+                    }
                 }
             }
         }
+
         if (cam.GetComponent<cameraMovement>().inRoom3)
         {
             if (getRoom == true)
             {
-                if (floor == -1 && side == -1)
+                if (currRoom == 3)
                 {
                     inCurrRoom = true;
                     getRoom = false;
                 }
-                if (floor != -1 || side != -1)
+                else
                 {
-                    inCurrRoom = false;
                     getRoom = false;
+                    inCurrRoom = false;
                 }
             }
 
@@ -190,7 +216,7 @@ public class playerMovement : MonoBehaviour
                     isMoving = true;
                 }
 
-                if (transform.position.x > -1 && isMoving == true)
+                if (transform.position.x > room3Pos.x && isMoving == true)
                 {
                     transform.Translate(Vector3.left * Time.deltaTime * speed);
 
@@ -199,10 +225,11 @@ public class playerMovement : MonoBehaviour
                         transform.localScale *= -1;
                     }
                 }
-                if (transform.position.x <= -1 && isMoving == true)
+                if (transform.position.x <= room3Pos.x && isMoving == true)
                 {
                     inCurrRoom = true;
                     isMoving = false;
+                    currRoom = 3;
                 }
             }
         }
@@ -211,12 +238,12 @@ public class playerMovement : MonoBehaviour
         {
             if (getRoom == true)
             {
-                if (floor == -1 && side == 1)
+                if (currRoom == 4)
                 {
                     inCurrRoom = true;
                     getRoom = false;
                 }
-                if (floor != -1 || side != 1)
+                else
                 {
                     inCurrRoom = false;
                     getRoom = false;
@@ -227,25 +254,60 @@ public class playerMovement : MonoBehaviour
             {
                 if (isMoving == false)
                 {
-                    transform.position = enterRoom4;
-                    isMoving = true;
-                }
-
-                if (transform.position.x < 1 && isMoving == true)
-                {
-                    transform.Translate(Vector3.right * Time.deltaTime * speed);
-
-                    if (transform.localScale.x < 0)
+                    if (currRoom != 3)
                     {
-                        transform.localScale *= -1;
+                        transform.position = enterRoom4a;
+                        isMoving = true;
+                    }
+                    if (currRoom == 3)
+                    {
+                        transform.position = enterRoom4b;
+                        isMoving = true;
                     }
                 }
-                if (transform.position.x >= 1 && isMoving == true)
+
+                if (isMoving == true)
                 {
-                    inCurrRoom = true;
-                    isMoving = false;
+                    if (currRoom != 3)
+                    {
+                        if (transform.position.x < room4PosA.x)
+                        {
+                            transform.Translate(Vector3.right * Time.deltaTime * speed);
+
+                            if (transform.localScale.x < 0)
+                            {
+                                transform.localScale *= -1;
+                            }
+                        }
+
+                        if (transform.position.x >= room4PosA.x && transform.position.y == room4PosA.y)
+                        {
+                            inCurrRoom = true;
+                            isMoving = false;
+                            currRoom = 4;
+                        }
+                    }
+                    if (currRoom == 3)
+                    {
+                        if (transform.position.x < room4PosB.x)
+                        {
+                            transform.Translate(Vector3.right * Time.deltaTime * speed);
+
+                            if (transform.localScale.x < 0)
+                            {
+                                transform.localScale *= -1;
+                            }
+                        }
+                        if (transform.position.x >= room4PosB.x && transform.position.y == room4PosB.y)
+                        {
+                            inCurrRoom = true;
+                            isMoving = false;
+                            currRoom = 4;
+                        }
+                    }
                 }
             }
         }
+
     }
 }
