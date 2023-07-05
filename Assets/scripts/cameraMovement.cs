@@ -29,7 +29,7 @@ public class cameraMovement : MonoBehaviour
     void Start()
     {
         onStart = true;
-
+        repos = true;
     }
 
     // Update is called once per frame

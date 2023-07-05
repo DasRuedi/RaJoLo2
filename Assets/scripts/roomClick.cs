@@ -9,7 +9,11 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     public GameObject player;
     public int room;
 
-    public Collider hitBox;
+    public Collider hitBox1;
+    public Collider hitBox2;
+    public Collider hitBox3;
+
+    public int colliderAmount;
 
     public void Start()
     {
@@ -20,36 +24,92 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         if (cam.GetComponent<cameraMovement>().onStart == true)
         {
-            hitBox.enabled = true;
+            if (colliderAmount == 1)
+            {
+                hitBox1.enabled = true;
+            }
+            if (colliderAmount == 2)
+            {
+                hitBox2.enabled = true;
+            }
+            if (colliderAmount == 3)
+            {
+                hitBox3.enabled = true;
+            }
         }
         if (room == 1)
         {
             if (cam.GetComponent<cameraMovement>().inRoom1 == true)
             {
-                hitBox.enabled = false;
+                if (colliderAmount == 1)
+                {
+                    hitBox1.enabled = false;
+                }
+                if (colliderAmount == 2)
+                {
+                    hitBox2.enabled = false;
+                }
+                if (colliderAmount == 3)
+                {
+                    hitBox3.enabled = false;
+                }
             }
         }
         if (room == 2)
         {
             if (cam.GetComponent<cameraMovement>().inRoom2 == true)
             {
-                hitBox.enabled = false;
+                if (colliderAmount == 1)
+                {
+                    hitBox1.enabled = false;
+                }
+                if (colliderAmount == 2)
+                {
+                    hitBox2.enabled = false;
+                }
+                if (colliderAmount == 3)
+                {
+                    hitBox3.enabled = false;
+                }
             }
         }
         if (room == 3)
         {
             if (cam.GetComponent<cameraMovement>().inRoom3 == true)
             {
-                hitBox.enabled = false;
+                if (colliderAmount == 1)
+                {
+                    hitBox1.enabled = false;
+                }
+                if (colliderAmount == 2)
+                {
+                    hitBox2.enabled = false;
+                }
+                if (colliderAmount == 3)
+                {
+                    hitBox3.enabled = false;
+                }
             }
         }
         if (room == 4)
         {
             if (cam.GetComponent<cameraMovement>().inRoom4 == true)
             {
-                hitBox.enabled = false;
+                if (colliderAmount == 1)
+                {
+                    hitBox1.enabled = false;
+                }
+                if (colliderAmount == 2)
+                {
+                    hitBox2.enabled = false;
+                }
+                if (colliderAmount == 3)
+                {
+                    hitBox3.enabled = false;
+                }
             }
         }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
