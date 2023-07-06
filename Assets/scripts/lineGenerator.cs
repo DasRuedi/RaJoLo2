@@ -10,9 +10,8 @@ public class lineGenerator : MonoBehaviour
     public GameObject paperSheet;
     public GameObject gameManager;
 
-    public Image bar;
+    public Image crayon;
 
-    public Material lineMat;
 
     line activeLine;
 
@@ -33,15 +32,14 @@ public class lineGenerator : MonoBehaviour
             lifeTime = 0;
         }
 
-        lineMat.SetColor("_Color", new Color(0, 0, 0, alpha));
 
         if (gameManager.GetComponent<miniGameManager>().state == GameState.DRAWING || gameManager.GetComponent<miniGameManager>().state == GameState.STARTING || gameManager.GetComponent<miniGameManager>().state == GameState.DELETE)
         {
-            bar.fillAmount = 0.95f - (lifeTime / lifeSpan);
+            crayon.fillAmount = 0.95f - (lifeTime / lifeSpan);
         }
         else
         {
-            bar.fillAmount = 0;
+            crayon.fillAmount = 0;
         }
 
 

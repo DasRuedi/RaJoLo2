@@ -52,6 +52,10 @@ public class miniGameCam : MonoBehaviour
         {
             cam.orthographicSize = fullScreen;
             zoom = false;
+            if (gameManager.GetComponent<miniGameManager>().state == GameState.TRANSITION)
+            {
+                gameManager.GetComponent<miniGameManager>().state = GameState.PLAYING;
+            }
         }
     }
 }
