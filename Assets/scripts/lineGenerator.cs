@@ -32,6 +32,11 @@ public class lineGenerator : MonoBehaviour
             lifeTime = 0;
         }
 
+        if (Input.GetKeyDown("f"))
+        {
+            lifeTime = 0;
+        }
+
 
         if (gameManager.GetComponent<miniGameManager>().state == GameState.DRAWING || gameManager.GetComponent<miniGameManager>().state == GameState.STARTING || gameManager.GetComponent<miniGameManager>().state == GameState.DELETE)
         {

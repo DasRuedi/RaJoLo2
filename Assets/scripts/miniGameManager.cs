@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum GameState { STARTING, DRAWING, TRANSITION, PLAYING, PAUSE, END, DELETE }
@@ -26,6 +27,12 @@ public class miniGameManager : MonoBehaviour
         else
         {
             delete = false;
+        }
+
+        if (state == GameState.END)
+        {
+            progressManager.angerGameDone = true;
+            SceneManager.LoadScene("House");
         }
     }
 }
