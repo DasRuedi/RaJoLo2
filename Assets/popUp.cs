@@ -30,7 +30,6 @@ public class popUp : MonoBehaviour
 
         if (flip == true)
         {
-
             if (transform.rotation.x < endRotation)
             {
                 transform.Rotate(new Vector3(rotationSpeed, 0, 0) * Time.deltaTime);
