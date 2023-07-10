@@ -9,16 +9,21 @@ public class objectToDestroy : MonoBehaviour
     public GameObject gameManager;
     public GameObject mood;
 
+    public int smashableChoice;
+    public int prevChoice;
+    public GameObject image;
+    public int spriteChoice;
+
+
+    public Sprite[] tv;
+    public Sprite[] sack;
+    public Sprite[] karton;
+
     public int hitsTaken;
 
-    Vector3 startScale;
-    public Vector3 currScale;
-
     public int damageThreshold;
-    Vector3 damageScale;
     public float damageValue;
     public int destroyThreshold;
-    Vector3 destroyScale;
     public float destroyValue;
 
     public float nextThreshold;
@@ -33,10 +38,21 @@ public class objectToDestroy : MonoBehaviour
 
     void Start()
     {
-        startScale = transform.localScale;
-        currScale = startScale;
-        damageScale = new Vector3(startScale.x, startScale.y * damageValue, startScale.z);
-        destroyScale = new Vector3(startScale.x, startScale.y * destroyValue, startScale.z);
+        smashableChoice = Random.Range(1, 4);
+        prevChoice = smashableChoice;
+
+        if (smashableChoice == 1)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = tv[spriteChoice];
+        }
+        if (smashableChoice == 2)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = sack[spriteChoice];
+        }
+        if (smashableChoice == 3)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = karton[spriteChoice];
+        }
 
     }
 
@@ -45,15 +61,26 @@ public class objectToDestroy : MonoBehaviour
     {
         hitsTaken = bat.GetComponent<bat>().hits;
 
-        transform.localScale = currScale;
+        if (smashableChoice == 1)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = tv[spriteChoice];
+        }
+        if (smashableChoice == 2)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = sack[spriteChoice];
+        }
+        if (smashableChoice == 3)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = karton[spriteChoice];
+        }
 
         if (hitsTaken >= damageThreshold && hitsTaken < destroyThreshold)
         {
-            currScale = damageScale;
+            spriteChoice = 1;
         }
         if (hitsTaken >= destroyThreshold)
         {
-            transform.localScale = destroyScale;
+            spriteChoice = 2;
         }
         if (hitsTaken >= nextThreshold)
         {
@@ -61,12 +88,28 @@ public class objectToDestroy : MonoBehaviour
             transform.Translate(Vector3.left * Time.deltaTime * swipeSpeed);
         }
 
-
+        if (smashableChoice <= 0)
+        {
+            smashableChoice = 3;
+        }
 
         if (transform.position.x <= -40)
         {
             reset = true;
             repos = true;
+
+            smashableChoice = Random.Range(1, 4);
+
+            if (smashableChoice == prevChoice)
+            {
+                smashableChoice--;
+            }
+            else
+            {
+                prevChoice = smashableChoice;
+            }
+
+            spriteChoice = 0;
         }
         if (repos == true)
         {
@@ -76,8 +119,8 @@ public class objectToDestroy : MonoBehaviour
 
         if (reset == true)
         {
+
             bat.GetComponent<bat>().hits = 0;
-            currScale = startScale;
 
             if (transform.position.x > 0)
             {

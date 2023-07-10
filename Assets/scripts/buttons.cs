@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject gameManager;
     public GameObject mood;
+    public GameObject breath;
 
+    public bool startButton;
     public bool ok;
     public bool delete;
     public bool end;
@@ -24,6 +27,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
     public void Update()
     {
+
         if (ok == true || delete == true)
         {
             if (gameManager.GetComponent<miniGameManager>().state == GameState.DRAWING)
@@ -38,15 +42,30 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
         if (end == true)
         {
+
             if (gameManager.GetComponent<miniGameManager>().state == GameState.PLAYING)
             {
-                if (mood.GetComponent<moodIcon>().enough == true)
+                if (gameManager.GetComponent<miniGameManager>().smash == true)
                 {
-                    transform.position = startPos;
+                    if (mood.GetComponent<moodIcon>().enough == true)
+                    {
+                        transform.position = startPos;
+                    }
+                    if (mood.GetComponent<moodIcon>().enough == false)
+                    {
+                        transform.position = inactivePos;
+                    }
                 }
-                if (mood.GetComponent<moodIcon>().enough == false)
+                if (gameManager.GetComponent<miniGameManager>().breathe == true)
                 {
-                    transform.position = inactivePos;
+                    if (breath.GetComponent<ringGrow>().breaths < 5)
+                    {
+                        transform.position = inactivePos;
+                    }
+                    if (breath.GetComponent<ringGrow>().breaths >= 5)
+                    {
+                        transform.position = startPos;
+                    }
                 }
             }
             else
@@ -58,19 +77,27 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
+
+        if (startButton == true)
+        {
+            SceneManager.LoadScene("House");
+        }
+
         if (ok == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.TRANSITION;
         }
+
         if (delete == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.DELETE;
         }
+
         if (end == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.END;
-            Debug.Log("end");
         }
+
     }
     public void OnPointerUp(PointerEventData eventData)
     {

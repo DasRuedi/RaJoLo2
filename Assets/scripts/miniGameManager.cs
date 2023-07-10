@@ -10,11 +10,22 @@ public class miniGameManager : MonoBehaviour
 
     public GameState state;
 
+
     public static bool delete;
+
+    public bool smash;
+    public bool breathe;
 
     void Start()
     {
-        state = GameState.STARTING;
+        if (smash == true)
+        {
+            state = GameState.STARTING;
+        }
+        if (breathe == true)
+        {
+            state = GameState.PLAYING;
+        }
     }
 
 
@@ -31,7 +42,10 @@ public class miniGameManager : MonoBehaviour
 
         if (state == GameState.END)
         {
-            progressManager.angerGameDone = true;
+            if (smash == true)
+            {
+                progressManager.angerGameDone = true;
+            }
             SceneManager.LoadScene("House");
         }
     }

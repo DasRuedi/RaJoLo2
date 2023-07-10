@@ -8,7 +8,10 @@ public class bat : MonoBehaviour
     public GameObject smash;
     public GameObject smashPoint;
     public GameObject objectToDestroy;
+    public GameObject batImg;
 
+    public Sprite[] batSprites;
+    public int spriteChoice;
 
     public bool hitting;
     public bool preImpact;
@@ -33,6 +36,8 @@ public class bat : MonoBehaviour
     {
         smashSpawn = smashPoint.GetComponent<Transform>().transform.position;
 
+        batImg.GetComponent<SpriteRenderer>().sprite = batSprites[spriteChoice];
+
 
         if (gameManager.GetComponent<miniGameManager>().state == GameState.PLAYING)
         {
@@ -50,6 +55,9 @@ public class bat : MonoBehaviour
             {
                 if (preImpact == true)
                 {
+
+                    spriteChoice = 1;
+
                     if (transform.rotation.z < hitRotation)
                     {
                         transform.Rotate(new Vector3(0, 0, hittingSpeed) * Time.deltaTime);
@@ -65,6 +73,8 @@ public class bat : MonoBehaviour
 
                 if (preImpact == false)
                 {
+                    spriteChoice = 0;
+
                     if (transform.rotation.z > startRotation)
                     {
                         transform.Rotate(new Vector3(0, 0, -hittingSpeed) * Time.deltaTime);
