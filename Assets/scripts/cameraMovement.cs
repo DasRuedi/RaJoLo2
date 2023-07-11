@@ -126,6 +126,8 @@ public class cameraMovement : MonoBehaviour
             limitDown = limitStart[3];
         }
 
+
+
         if (inRoom1 == true)
         {
             if (transform.position != room1 && repos == true)

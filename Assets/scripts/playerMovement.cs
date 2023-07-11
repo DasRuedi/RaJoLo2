@@ -6,17 +6,6 @@ public class playerMovement : MonoBehaviour
 {
     public bool isMoving;
 
-    public float stepTime;
-    public float stepRate;
-
-    public GameObject leftLeg;
-    public GameObject rightLeg;
-
-    public Vector3 leftStandOffset;
-    public Vector3 rightStandOffset;
-    public Vector3 leftMoveOffset;
-    public Vector3 rightMoveOffset;
-
     public GameObject cam;
 
     public bool inCurrRoom;
@@ -37,43 +26,22 @@ public class playerMovement : MonoBehaviour
     public Vector3 room4PosA;
     public Vector3 room4PosB;
 
+    public float orientation = 1;
+
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        orientation = transform.localScale.x;
+
+        transform.localScale = new Vector3(-orientation, orientation, orientation);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isMoving == false)
-        {
-            leftLeg.GetComponent<Transform>().position = transform.position + leftStandOffset;
-            rightLeg.GetComponent<Transform>().position = transform.position + rightStandOffset;
-        }
-
-        if (isMoving == true)
-        {
-            stepTime += Time.deltaTime;
-
-            if (stepTime < stepRate)
-            {
-                leftLeg.GetComponent<Transform>().position = transform.position + leftMoveOffset;
-                rightLeg.GetComponent<Transform>().position = transform.position + rightStandOffset;
-            }
-            if (stepTime >= stepRate && stepTime < stepRate * 2)
-            {
-                leftLeg.GetComponent<Transform>().position = transform.position + leftStandOffset;
-                rightLeg.GetComponent<Transform>().position = transform.position + rightMoveOffset;
-            }
-            if (stepTime >= stepRate * 2)
-            {
-                stepTime = 0;
-            }
-        }
-
+        
 
         if (cam.GetComponent<cameraMovement>().inRoom1)
         {
@@ -105,7 +73,7 @@ public class playerMovement : MonoBehaviour
 
                     if (transform.localScale.x > 0)
                     {
-                        transform.localScale *= -1;
+                        transform.localScale = new Vector3(-orientation, orientation, orientation);
                     }
                 }
                 if (transform.position.y >= room1Pos.y && isMoving == true)
@@ -159,7 +127,7 @@ public class playerMovement : MonoBehaviour
 
                             if (transform.localScale.x > 0)
                             {
-                                transform.localScale *= -1;
+                                transform.localScale = new Vector3(-orientation, orientation, orientation);
                             }
                         }
 
@@ -178,7 +146,7 @@ public class playerMovement : MonoBehaviour
 
                             if (transform.localScale.x > 0)
                             {
-                                transform.localScale *= -1;
+                                transform.localScale = new Vector3(-orientation, orientation, orientation);
                             }
                         }
                         if (transform.position.x <= room2Pos.x && transform.position.y <= room2Pos.y)
@@ -222,7 +190,7 @@ public class playerMovement : MonoBehaviour
 
                     if (transform.localScale.x > 0)
                     {
-                        transform.localScale *= -1;
+                        transform.localScale = new Vector3(-orientation, orientation, orientation);
                     }
                 }
                 if (transform.position.x <= room3Pos.x && isMoving == true)
@@ -276,7 +244,7 @@ public class playerMovement : MonoBehaviour
 
                             if (transform.localScale.x < 0)
                             {
-                                transform.localScale *= -1;
+                                transform.localScale = new Vector3(orientation, orientation, orientation);
                             }
                         }
 
@@ -295,7 +263,7 @@ public class playerMovement : MonoBehaviour
 
                             if (transform.localScale.x < 0)
                             {
-                                transform.localScale *= -1;
+                                transform.localScale = new Vector3(orientation, orientation, orientation);
                             }
                         }
                         if (transform.position.x >= room4PosB.x && transform.position.y == room4PosB.y)
