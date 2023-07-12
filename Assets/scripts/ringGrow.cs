@@ -52,12 +52,13 @@ public class ringGrow : MonoBehaviour
 
         if (breatheOut == false)
         {
-            if (Input.GetKey("space"))
+            if (Input.GetKey("space") || Input.GetMouseButton(0))
             {
                 breatheIn = true;
             }
+
         }
-        if (Input.GetKeyUp("space"))
+        if (Input.GetKeyUp("space") || Input.GetMouseButtonUp(0))
         {
             breatheIn = false;
             breatheOut = true;

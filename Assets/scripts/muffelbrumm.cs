@@ -18,6 +18,7 @@ public class muffelbrumm : MonoBehaviour
     public float fadeSpeed;
 
     public float alpha;
+    public bool invisible;
 
     public bool speaking;
     void Start()
@@ -28,6 +29,17 @@ public class muffelbrumm : MonoBehaviour
     void Update()
     {
         sprite.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, alpha);
+
+
+        if (alpha == 0)
+        {
+            invisible = true;
+        }
+        else
+        {
+            invisible = false;
+        }
+
 
         if (speaking == true)
         {
@@ -42,6 +54,7 @@ public class muffelbrumm : MonoBehaviour
         if (cam.GetComponent<cameraMovement>().onStart == true)
         {
             alpha = 0;
+            speaking = false;
         }
 
         if (cam.GetComponent<cameraMovement>().inRoom1 == true)
@@ -49,6 +62,12 @@ public class muffelbrumm : MonoBehaviour
             if (inRoom1 == true)
             {
                 fade = true;
+                Fade();
+            }
+            else
+            {
+                alpha = 0;
+                speaking = false;
             }
         }
         if (cam.GetComponent<cameraMovement>().inRoom2 == true)
@@ -56,6 +75,12 @@ public class muffelbrumm : MonoBehaviour
             if (inRoom2 == true)
             {
                 fade = true;
+                Fade();
+            }
+            else
+            {
+                alpha = 0;
+                speaking = false;
             }
         }
         if (cam.GetComponent<cameraMovement>().inRoom3 == true)
@@ -63,6 +88,12 @@ public class muffelbrumm : MonoBehaviour
             if (inRoom3 == true)
             {
                 fade = true;
+                Fade();
+            }
+            else
+            {
+                alpha = 0;
+                speaking = false;
             }
         }
         if (cam.GetComponent<cameraMovement>().inRoom4 == true)
@@ -70,9 +101,18 @@ public class muffelbrumm : MonoBehaviour
             if (inRoom4 == true)
             {
                 fade = true;
+                Fade();
+            }
+            else
+            {
+                alpha = 0;
+                speaking = false;
             }
         }
+    }
 
+    public void Fade()
+    {
         if (fade == true)
         {
             if (alpha < 1)
@@ -82,6 +122,7 @@ public class muffelbrumm : MonoBehaviour
             if (alpha >= 1)
             {
                 alpha = 1;
+                fade = false;
             }
         }
     }

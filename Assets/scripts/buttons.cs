@@ -13,7 +13,8 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     public bool startButton;
     public bool ok;
     public bool delete;
-    public bool end;
+    public bool endBreath;
+    public bool endAnger;
 
 
 
@@ -40,7 +41,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
             }
         }
 
-        if (end == true)
+        if (endBreath == true || endAnger == true)
         {
 
             if (gameManager.GetComponent<miniGameManager>().state == GameState.PLAYING)
@@ -93,7 +94,12 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
             gameManager.GetComponent<miniGameManager>().state = GameState.DELETE;
         }
 
-        if (end == true)
+        if (endAnger == true)
+        {
+            gameManager.GetComponent<miniGameManager>().state = GameState.PROCEED;
+        }
+
+        if (endBreath == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.END;
         }

@@ -15,11 +15,6 @@ public class sceneManagerHouse : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("n"))
-        {
-            SceneManager.LoadScene("AngerGame");
-        }
-
         if (progressManager.angerGameDone == true)
         {
             Debug.Log("not angy");

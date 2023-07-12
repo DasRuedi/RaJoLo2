@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6614955094345836612}
   - component: {fileID: 5220406790596421001}
+  - component: {fileID: 2395414484419450115}
+  - component: {fileID: 4161547788465282280}
   m_Layer: 0
   m_Name: muffelbrumm1
   m_TagString: Untagged
@@ -84,6 +86,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &2395414484419450115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635960667448171429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.54, y: 10.09, z: 0.01}
+  m_Center: {x: -0.95, y: -0.14, z: 0}
+--- !u!114 &4161547788465282280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635960667448171429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30333cf6a322e2f4998e9ea255e41864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muffelBody: {fileID: 0}
+  speechBubble: {fileID: 0}
+  dialogue: {fileID: 0}
+  muffelbrumm: 1
+  bubble: 0
+  invisible: 0
 --- !u!1 &5559176273722088531
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +173,8 @@ MonoBehaviour:
   fade: 0
   fadeSpeed: 0
   alpha: 0
+  invisible: 0
+  speaking: 0
 --- !u!1001 &7462559608123835934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2696858743549167138, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2696858743549167138, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -207,12 +242,27 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2893875018329501257, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462121779233383457, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
       propertyPath: m_Name
       value: speechBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
+--- !u!114 &2050687496738792008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8927778253093282902, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
+  m_PrefabInstance: {fileID: 7462559608123835934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4827151616052412476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2696858743549167138, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
@@ -223,3 +273,56 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4462121779233383457, guid: 9666e43f07707494e9f64ac68e05a58e, type: 3}
   m_PrefabInstance: {fileID: 7462559608123835934}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1009019466964899458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520352928591192639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.05, y: 1.05, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3638050485890017033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520352928591192639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30333cf6a322e2f4998e9ea255e41864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muffelBody: {fileID: 0}
+  speechBubble: {fileID: 6520352928591192639}
+  dialogue: {fileID: 6520352928591192639}
+  muffelbrumm: 0
+  bubble: 1
+  invisible: 0
+--- !u!114 &4588851514094047394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520352928591192639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5e2e991f4babe43bd6500f02406e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 5559176273722088531}
+  dialogueBox: {fileID: 2050687496738792008}
+  chapter1: 0
+  sentences1: []
+  chapter2: 0
+  sentences2: []
+  chapter3: 0
+  sentences3: []
+  dialogueProgress: 0
+  dialogueLength: 0

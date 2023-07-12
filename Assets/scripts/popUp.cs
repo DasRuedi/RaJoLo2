@@ -6,6 +6,7 @@ public class popUp : MonoBehaviour
 {
 
     public GameObject cam;
+    public GameObject roomManager;
 
     public bool onGround;
     public bool onCeiling;
@@ -29,26 +30,28 @@ public class popUp : MonoBehaviour
     public float endScale;
     public float growSpeed;
 
+    public bool reset;
+
+
     void Start()
     {
         startPos = transform.position;
         currScale = 0;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
         transform.localScale = new Vector3(transform.localScale.x, currScale, transform.localScale.z);
 
 
-        if (cam.GetComponent<cameraMovement>().onStart == true)
+        if (cam.GetComponent<cameraMovement>().onStart == true || roomManager.GetComponent<roomClick>().entering == true)
         {
-            transform.position = inactivePos;
-            transform.eulerAngles = new Vector3(startRotation, 0, 0);
-            currScale = 0;
-            flip = false;
-
+            if (reset == true)
+            {
+                Reset();
+            }
         }
 
         if (inRoom1 == true)
@@ -63,6 +66,7 @@ public class popUp : MonoBehaviour
             if (cam.GetComponent<cameraMovement>().inRoom1 == false)
             {
                 transform.position = inactivePos;
+                reset = true;
             }
         }
         if (inRoom2 == true)
@@ -77,6 +81,7 @@ public class popUp : MonoBehaviour
             if (cam.GetComponent<cameraMovement>().inRoom2 == false)
             {
                 transform.position = inactivePos;
+                reset = true;
             }
         }
         if (inRoom3 == true)
@@ -91,6 +96,7 @@ public class popUp : MonoBehaviour
             if (cam.GetComponent<cameraMovement>().inRoom3 == false)
             {
                 transform.position = inactivePos;
+                reset = true;
             }
         }
         if (inRoom4 == true)
@@ -105,6 +111,7 @@ public class popUp : MonoBehaviour
             if (cam.GetComponent<cameraMovement>().inRoom4 == false)
             {
                 transform.position = inactivePos;
+                reset = true;
             }
         }
 
@@ -170,5 +177,20 @@ public class popUp : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Reset()
+    {
+        transform.position = inactivePos;
+        transform.eulerAngles = new Vector3(startRotation, 0, 0);
+        currScale = 0;
+        flip = false;
+
+        if (roomManager.GetComponent<roomClick>().entering == true)
+        {
+            Debug.Log("resetting");
+            roomManager.GetComponent<roomClick>().resetObjects++;
+        }
+        reset = false;
     }
 }

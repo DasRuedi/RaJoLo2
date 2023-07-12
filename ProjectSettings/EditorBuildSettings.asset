@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: ef591ffe7da7a0d44951dd8eac51badd
+  - enabled: 1
+    path: Assets/Scenes/breathingGame.unity
+    guid: f6f458ad79d2da242b73478f4b27e89d
   m_configObjects: {}
