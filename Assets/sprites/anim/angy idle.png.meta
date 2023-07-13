@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: angy idle_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 165
+        width: 978
+        height: 1417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3777aa6d514bacb438cdea0296336430
+      internalID: -1319560980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angy idle_2
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 179
+        width: 1018
+        height: 1403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f24199506f6c7d4da1c74dad98ce214
+      internalID: -2012525908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angy idle_3
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 172
+        width: 942
+        height: 1410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df20db11a13925d4b851b63c27d96320
+      internalID: -1489667826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: angy idle_4
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 173
+        width: 789
+        height: 1408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b593057324a4ef44d98b5becd4e08e10
+      internalID: 1574633497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +198,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      angy idle_8: 650283285
+      angy idle_9: -1585797173
+      angy idle_4: 1574633497
+      angy idle_2: -2012525908
+      angy idle_0: 397636196
+      angy idle_3: -1489667826
+      angy idle_10: 1577823979
+      angy idle_7: 1937524969
+      angy idle_5: -1161209306
+      angy idle_6: 1194489690
+      angy idle_12: 1433210421
+      angy idle_1: -1319560980
+      angy idle_11: 1704956310
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

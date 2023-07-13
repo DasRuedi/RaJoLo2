@@ -30,6 +30,8 @@ public class playerMovement : MonoBehaviour
 
     public float speed;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -135,7 +137,10 @@ public class playerMovement : MonoBehaviour
                         {
                             inCurrRoom = true;
                             isMoving = false;
+                            anim.SetBool("redwalk", false);
+                            anim.SetBool("angry", true);
                             currRoom = 2;
+                          
                         }
                     }
                     if (currRoom != 1 || currRoom != 2)
