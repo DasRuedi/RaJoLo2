@@ -2463,6 +2463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 1916334220}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   yes: 1
   no: 0
   alpha: 0
@@ -3744,6 +3746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 1916334220}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
   yes: 0
   no: 1
   alpha: 0
@@ -6872,6 +6876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 0}
+  yesButton: {fileID: 791282445}
+  noButton: {fileID: 1138615241}
   yes: 0
   no: 0
   alpha: 0

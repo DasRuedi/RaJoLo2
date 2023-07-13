@@ -70,7 +70,6 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
         if (no == true)
         {
-            Debug.Log("no");
             question.GetComponent<playGameButtons>().asking = false;
             question.GetComponent<playGameButtons>().answered = true;
         }
