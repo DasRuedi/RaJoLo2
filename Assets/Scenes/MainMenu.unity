@@ -154,7 +154,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.56, y: 1.37, z: 0.01}
+  m_Size: {x: 3.01, y: 1.33, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &351429563
 SpriteRenderer:
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6471f077c3a11774799521c50ce92678, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ae257d86becdc64c878eef7b650b9d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -216,8 +216,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351429561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.55, z: -0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.81, z: -0.2}
+  m_LocalScale: {x: 0.7741975, y: 0.7741975, z: 0.7741975}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -257,7 +257,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverOver: 0
-  jiggling: 1
+  jittering: 1
+  sprites:
+  - {fileID: 21300000, guid: 3ae257d86becdc64c878eef7b650b9d7, type: 3}
+  - {fileID: 21300000, guid: d1caa3117cdfc7a499fe11f03b6941bb, type: 3}
+  - {fileID: 21300000, guid: 5a199a5811bec5b41a3b47013cdff8c2, type: 3}
+  spriteChoice: 0
+  jitterTime: 0
+  jitterRate: 0.2
+  jiggling: 0
   jiggleSpeed: 20
   jiggleTime: 0
   jiggleRate: 0.1
@@ -456,6 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1993474564}
   - component: {fileID: 1993474563}
+  - component: {fileID: 1993474565}
   m_Layer: 0
   m_Name: main menu-11
   m_TagString: Untagged
@@ -504,7 +513,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a214715be648f504483d3585bbbaed8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa887a384ea58ce4589191d491393646, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -523,13 +532,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993474562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: -0.1}
-  m_LocalScale: {x: 3.1182153, y: 3.1182153, z: 3.1182153}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.64, z: -0.1}
+  m_LocalScale: {x: 0.92880005, y: 0.92880005, z: 0.92880005}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993474565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993474562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3722c3eb66264b47943d14a6bc4815b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jittering: 1
+  sprites:
+  - {fileID: 21300000, guid: aa887a384ea58ce4589191d491393646, type: 3}
+  - {fileID: 21300000, guid: 5cac4d47584896d4dae87a5675deb2fc, type: 3}
+  - {fileID: 21300000, guid: fd0ec67b0eaedf2418ad4ec22bbb2df2, type: 3}
+  spriteChoice: 0
+  jitterTime: 0
+  jitterRate: 0.2
+  jiggling: 0
+  jiggleSpeed: 0
+  jiggleTime: 0
+  jiggleRate: 0
 --- !u!1 &2145495851
 GameObject:
   m_ObjectHideFlags: 0
