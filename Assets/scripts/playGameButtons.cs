@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject question;
+    public GameObject yesButton;
+    public GameObject noButton;
 
     public bool yes;
     public bool no;
@@ -32,6 +34,20 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             asking = question.GetComponent<playGameButtons>().asking;
             answered = question.GetComponent<playGameButtons>().answered;
+        }
+
+        if (yes == false && no == false)
+        {
+            if (asking == false)
+            {
+                yesButton.SetActive(false);
+                noButton.SetActive(false);
+            }
+            if (asking == true)
+            {
+                yesButton.SetActive(true);
+                noButton.SetActive(true);
+            }
         }
 
         if (asking == true)
