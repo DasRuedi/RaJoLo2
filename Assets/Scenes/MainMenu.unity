@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 351429563}
   - component: {fileID: 351429565}
   - component: {fileID: 351429562}
+  - component: {fileID: 351429566}
   m_Layer: 0
   m_Name: start button
   m_TagString: Untagged
@@ -236,11 +237,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   mood: {fileID: 0}
+  breath: {fileID: 0}
   startButton: 1
   ok: 0
   delete: 0
-  end: 0
+  endBreath: 0
+  endAnger: 0
   inactivePos: {x: 0, y: 0, z: 0}
+--- !u!114 &351429566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351429561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 20
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &358749985
 GameObject:
   m_ObjectHideFlags: 0

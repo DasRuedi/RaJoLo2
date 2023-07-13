@@ -42,7 +42,30 @@ public class muffelbrummButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
         }
         if (bubble == true)
         {
-            dialogue.GetComponent<dialogue>().dialogueProgress++;
+            if (dialogue.GetComponent<dialogue>().dialogueProgress < dialogue.GetComponent<dialogue>().dialogueLength)
+            {
+                dialogue.GetComponent<dialogue>().dialogueProgress++;
+            }
+
+            if (dialogue.GetComponent<dialogue>().endOfDialogue == true)
+            {
+
+                if (dialogue.GetComponent<dialogue>().chapter1 == true)
+                {
+                    Debug.Log("restart");
+                    dialogue.GetComponent<dialogue>().dialogueProgress = 0;
+                }
+
+                if (dialogue.GetComponent<dialogue>().chapter2 == true)
+                {
+                    dialogue.GetComponent<dialogue>().chapter3 = true;
+                    dialogue.GetComponent<dialogue>().chapter2 = false;
+                    dialogue.GetComponent<dialogue>().dialogueProgress = 0;
+                }
+
+                muffelBody.GetComponent<muffelbrumm>().speaking = false;
+                dialogue.GetComponent<dialogue>().endOfDialogue = false;
+            }
         }
 
     }

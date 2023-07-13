@@ -2427,6 +2427,7 @@ GameObject:
   - component: {fileID: 791282449}
   - component: {fileID: 791282448}
   - component: {fileID: 791282447}
+  - component: {fileID: 791282450}
   m_Layer: 0
   m_Name: yes
   m_TagString: Untagged
@@ -2533,6 +2534,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &791282450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791282445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &795262129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +2964,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.33
       objectReference: {fileID: 0}
+    - target: {fileID: 3638050485890017033, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: muffelBody
+      value: 
+      objectReference: {fileID: 1790361346}
     - target: {fileID: 4161547788465282280, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: muffelBody
       value: 
@@ -2954,6 +2976,10 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 1916334220}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: gameReady
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences.Array.size
       value: 3
@@ -3682,6 +3708,7 @@ GameObject:
   - component: {fileID: 1138615245}
   - component: {fileID: 1138615244}
   - component: {fileID: 1138615243}
+  - component: {fileID: 1138615246}
   m_Layer: 0
   m_Name: no
   m_TagString: Untagged
@@ -3788,6 +3815,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1138615246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138615241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1001 &1170402316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4306,6 +4350,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3638050485890017033, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: muffelBody
+      value: 
+      objectReference: {fileID: 733198445}
     - target: {fileID: 4161547788465282280, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: muffelBody
       value: 
@@ -4314,6 +4362,10 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 1916334220}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: gameReady
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
       value: 4
@@ -6590,6 +6642,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3638050485890017033, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: muffelBody
+      value: 
+      objectReference: {fileID: 820670288}
     - target: {fileID: 4161547788465282280, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: muffelBody
       value: 
@@ -6598,6 +6654,10 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 1916334220}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: gameReady
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
       value: 4
@@ -7787,6 +7847,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3638050485890017033, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: muffelBody
+      value: 
+      objectReference: {fileID: 2029693721}
     - target: {fileID: 4161547788465282280, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: muffelBody
       value: 
@@ -7796,8 +7860,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1916334220}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: gameReady
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences2.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences3.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[0]
@@ -7818,6 +7894,26 @@ PrefabInstance:
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[4]
       value: kannst du dich damit ein wenig austoben.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences2.Array.data[0]
+      value: Alles klar.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences2.Array.data[1]
+      value: "Wenn du es dir anders \xFCberlegst..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences2.Array.data[2]
+      value: Komm gerne wieder vorbei.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences3.Array.data[0]
+      value: Hallo Nora.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences3.Array.data[1]
+      value: "M\xF6chtest du dich jetzt austoben?"
       objectReference: {fileID: 0}
     - target: {fileID: 5336051326532564016, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_Layer

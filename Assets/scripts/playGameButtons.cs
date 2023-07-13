@@ -30,10 +30,8 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
         if (yes == true || no == true)
         {
-            if (question.GetComponent<playGameButtons>().asking == true)
-            {
-                asking = true;
-            }
+            asking = question.GetComponent<playGameButtons>().asking;
+            answered = question.GetComponent<playGameButtons>().answered;
         }
 
         if (asking == true)
@@ -41,7 +39,7 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             alpha = 1;
             answered = false;
         }
-        else
+        if (asking == false)
         {
             alpha = 0;
         }
@@ -56,8 +54,9 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
         if (no == true)
         {
-            asking = false;
-            answered = true;
+            Debug.Log("no");
+            question.GetComponent<playGameButtons>().asking = false;
+            question.GetComponent<playGameButtons>().answered = true;
         }
     }
     public void OnPointerUp(PointerEventData eventData)

@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 300626397}
   - component: {fileID: 300626399}
   - component: {fileID: 300626400}
+  - component: {fileID: 300626401}
   m_Layer: 0
   m_Name: endButton
   m_TagString: Untagged
@@ -364,6 +365,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.37, y: 2.49, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &300626401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300626396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &409859819
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +830,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -169, y: 1.0000001}
-  m_SizeDelta: {x: 42.28, y: 248.4}
+  m_SizeDelta: {x: 80.19, y: 248.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725136516
 MonoBehaviour:
@@ -1180,6 +1198,7 @@ GameObject:
   - component: {fileID: 1594452806}
   - component: {fileID: 1594452805}
   - component: {fileID: 1594452804}
+  - component: {fileID: 1594452807}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1234,7 +1253,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.6, z: 0.01}
+  m_Size: {x: 0.88, y: 0.85, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1594452806
 SpriteRenderer:
@@ -1288,6 +1307,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1594452807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594452802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &1616865277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1336,7 @@ GameObject:
   - component: {fileID: 1616865281}
   - component: {fileID: 1616865280}
   - component: {fileID: 1616865279}
+  - component: {fileID: 1616865282}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -1354,7 +1391,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67, y: 0.69, z: 0.01}
+  m_Size: {x: 0.67, y: 0.95, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1616865281
 SpriteRenderer:
@@ -1408,6 +1445,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1616865282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616865277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &1673965198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3166528258241302984, guid: b9b853a8c7dfece4bb9f1c7c35722a95, type: 3}
