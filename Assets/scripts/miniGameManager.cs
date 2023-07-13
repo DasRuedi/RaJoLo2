@@ -4,17 +4,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public enum GameState { STARTING, DRAWING, TRANSITION, PLAYING, PAUSE, END, DELETE }
+public enum GameState { STARTING, DRAWING, TRANSITION, PLAYING, PAUSE, PROCEED, END, DELETE }
 public class miniGameManager : MonoBehaviour
 {
 
     public GameState state;
 
+
     public static bool delete;
+
+    public bool smash;
+    public bool breathe;
 
     void Start()
     {
-        state = GameState.STARTING;
+        if (smash == true)
+        {
+            state = GameState.STARTING;
+        }
+        if (breathe == true)
+        {
+            state = GameState.PLAYING;
+        }
     }
 
 
@@ -29,9 +40,18 @@ public class miniGameManager : MonoBehaviour
             delete = false;
         }
 
+        if (state == GameState.PROCEED)
+        {
+            if (smash == true)
+            {
+                progressManager.angerGameDone = true;
+            }
+
+            SceneManager.LoadScene("breathingGame");
+        }
+
         if (state == GameState.END)
         {
-            progressManager.angerGameDone = true;
             SceneManager.LoadScene("House");
         }
     }

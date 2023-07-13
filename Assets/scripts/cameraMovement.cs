@@ -7,6 +7,11 @@ public class cameraMovement : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject room1box;
+    public GameObject room2box;
+    public GameObject room3box;
+    public GameObject room4box;
+
     public float baseSpeed;
     float speed;
 
@@ -49,6 +54,8 @@ public class cameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetKey("w"))
         {
             if (transform.position.y < limitUp)
@@ -106,6 +113,7 @@ public class cameraMovement : MonoBehaviour
                     inRoom4 = false;
                     repos = true;
                 }
+
             }
         }
 
@@ -124,7 +132,15 @@ public class cameraMovement : MonoBehaviour
             limitRight = limitStart[1];
             limitUp = limitStart[2];
             limitDown = limitStart[3];
+
+
+            room1box.SetActive(true);
+            room2box.SetActive(true);
+            room3box.SetActive(true);
+            room4box.SetActive(true);
         }
+
+
 
         if (inRoom1 == true)
         {
@@ -141,6 +157,11 @@ public class cameraMovement : MonoBehaviour
             limitRight = limit1[1];
             limitUp = limit1[2];
             limitDown = limit1[3];
+
+            room1box.SetActive(false);
+            room2box.SetActive(true);
+            room3box.SetActive(true);
+            room4box.SetActive(true);
         }
 
         if (inRoom2 == true)
@@ -158,6 +179,11 @@ public class cameraMovement : MonoBehaviour
             limitRight = limit2[1];
             limitUp = limit2[2];
             limitDown = limit2[3];
+
+            room1box.SetActive(true);
+            room2box.SetActive(false);
+            room3box.SetActive(true);
+            room4box.SetActive(true);
         }
         if (inRoom3 == true)
         {
@@ -174,6 +200,11 @@ public class cameraMovement : MonoBehaviour
             limitRight = limit3[1];
             limitUp = limit3[2];
             limitDown = limit3[3];
+
+            room1box.SetActive(true);
+            room2box.SetActive(true);
+            room3box.SetActive(false);
+            room4box.SetActive(true);
         }
         if (inRoom4 == true)
         {
@@ -202,6 +233,12 @@ public class cameraMovement : MonoBehaviour
             limitRight = limit4[1];
             limitUp = limit4[2];
             limitDown = limit4[3];
+
+
+            room1box.SetActive(true);
+            room2box.SetActive(true);
+            room3box.SetActive(true);
+            room4box.SetActive(false);
         }
     }
 }

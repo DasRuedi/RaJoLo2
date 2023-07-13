@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 300626397}
   - component: {fileID: 300626399}
   - component: {fileID: 300626400}
+  - component: {fileID: 300626401}
   m_Layer: 0
   m_Name: endButton
   m_TagString: Untagged
@@ -344,9 +345,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 610300300}
   mood: {fileID: 759268269}
+  breath: {fileID: 0}
+  startButton: 0
   ok: 0
   delete: 0
-  end: 1
+  endBreath: 0
+  endAnger: 1
   inactivePos: {x: 0, y: 100, z: 0}
 --- !u!65 &300626400
 BoxCollider:
@@ -361,6 +365,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.37, y: 2.49, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &300626401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300626396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &409859819
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  smash: 1
+  breathe: 0
 --- !u!4 &610300302
 Transform:
   m_ObjectHideFlags: 0
@@ -636,8 +659,8 @@ Transform:
   m_GameObject: {fileID: 635091344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.4944, y: 6.4944, z: 6.4944}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 14.34, y: 14.34, z: 14.34}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 436513924}
   m_RootOrder: 1
@@ -705,8 +728,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.98, y: 0.9, z: 0.01}
-  m_Center: {x: 0, y: 0.05, z: 0}
+  m_Size: {x: 0.4, y: 0.44, z: 0.01}
+  m_Center: {x: 0.025, y: -0.01, z: 0}
 --- !u!114 &635091348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +830,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -169, y: 1.0000001}
-  m_SizeDelta: {x: 42.28, y: 248.4}
+  m_SizeDelta: {x: 80.19, y: 248.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725136516
 MonoBehaviour:
@@ -953,6 +976,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &871906429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6918550073246873843, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+  m_PrefabInstance: {fileID: 808569905891048626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1327921796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1198,7 @@ GameObject:
   - component: {fileID: 1594452806}
   - component: {fileID: 1594452805}
   - component: {fileID: 1594452804}
+  - component: {fileID: 1594452807}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1206,9 +1235,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 610300300}
   mood: {fileID: 0}
+  breath: {fileID: 0}
+  startButton: 0
   ok: 1
   delete: 0
-  end: 0
+  endBreath: 0
+  endAnger: 0
   inactivePos: {x: 0, y: 100, z: 0}
 --- !u!65 &1594452805
 BoxCollider:
@@ -1221,7 +1253,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.6, z: 0.01}
+  m_Size: {x: 0.88, y: 0.85, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1594452806
 SpriteRenderer:
@@ -1275,6 +1307,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1594452807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594452802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &1616865277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1336,7 @@ GameObject:
   - component: {fileID: 1616865281}
   - component: {fileID: 1616865280}
   - component: {fileID: 1616865279}
+  - component: {fileID: 1616865282}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -1323,9 +1373,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 610300300}
   mood: {fileID: 0}
+  breath: {fileID: 0}
+  startButton: 0
   ok: 0
   delete: 1
-  end: 0
+  endBreath: 0
+  endAnger: 0
   inactivePos: {x: 0, y: 100, z: 0}
 --- !u!65 &1616865280
 BoxCollider:
@@ -1338,7 +1391,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67, y: 0.69, z: 0.01}
+  m_Size: {x: 0.67, y: 0.95, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1616865281
 SpriteRenderer:
@@ -1392,6 +1445,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1616865282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616865277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620d46e726c60434d965c3b405722e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverOver: 0
+  jiggling: 1
+  jiggleSpeed: 30
+  jiggleTime: 0
+  jiggleRate: 0.1
 --- !u!1 &1673965198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3166528258241302984, guid: b9b853a8c7dfece4bb9f1c7c35722a95, type: 3}
@@ -1406,7 +1476,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5700144575186323508, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
       propertyPath: m_Name
-      value: fernseher
+      value: smashables
       objectReference: {fileID: 0}
     - target: {fileID: 5720740314996347923, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
       propertyPath: m_RootOrder
@@ -1430,7 +1500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5720740314996347923, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 4.12
       objectReference: {fileID: 0}
     - target: {fileID: 5720740314996347923, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1473,6 +1543,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 759268269}
     - target: {fileID: 6235821971918607543, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 871906429}
+    - target: {fileID: 6235821971918607543, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
       propertyPath: resetPos.z
       value: 1
       objectReference: {fileID: 0}
@@ -1484,6 +1558,22 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 610300300}
+    - target: {fileID: 6235821971918607543, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+      propertyPath: nextThreshold
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076224362817365640, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076224362817365640, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451586945025771958, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94a011cd8c79a2640b35ac6528ef7144, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d28af6df4a4da5a42b1cb86592bcf903, type: 3}
 --- !u!1001 &8391523595478871002
