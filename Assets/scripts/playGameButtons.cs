@@ -9,6 +9,7 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public GameObject question;
     public GameObject yesButton;
     public GameObject noButton;
+    public GameObject cursor;
 
     public bool yes;
     public bool no;
@@ -84,10 +85,10 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = true;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = false;
     }
 }

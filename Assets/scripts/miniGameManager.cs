@@ -42,16 +42,18 @@ public class miniGameManager : MonoBehaviour
 
         if (state == GameState.PROCEED)
         {
-            if (smash == true)
-            {
-                progressManager.angerGameDone = true;
-            }
 
             SceneManager.LoadScene("breathingGame");
         }
 
         if (state == GameState.END)
         {
+            if (smash == true)
+            {
+                progressManager.angerGameDone = true;
+                progressManager.comingFrom = 2;
+            }
+
             SceneManager.LoadScene("House");
         }
     }

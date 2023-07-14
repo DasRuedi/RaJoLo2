@@ -378,7 +378,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverOver: 0
-  jiggling: 1
+  jittering: 1
+  sprites:
+  - {fileID: 21300000, guid: 5a716539009980f4fb9e6cd082ff2080, type: 3}
+  - {fileID: 21300000, guid: d9da1b3b5ca32fe41a47469aee34c383, type: 3}
+  - {fileID: 21300000, guid: 95aa7d9ffeeed964fadbda8f50e24d73, type: 3}
+  spriteChoice: 0
+  jitterTime: 0
+  jitterRate: 0.1
+  jiggling: 0
   jiggleSpeed: 30
   jiggleTime: 0
   jiggleRate: 0.1
@@ -1320,6 +1328,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverOver: 0
+  jittering: 0
+  sprites: []
+  spriteChoice: 0
+  jitterTime: 0
+  jitterRate: 0
   jiggling: 1
   jiggleSpeed: 30
   jiggleTime: 0
@@ -1458,6 +1471,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverOver: 0
+  jittering: 0
+  sprites: []
+  spriteChoice: 0
+  jitterTime: 0
+  jitterRate: 0
   jiggling: 1
   jiggleSpeed: 30
   jiggleTime: 0

@@ -11,6 +11,8 @@ public class muffelbrummButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public GameObject speechBubble;
     public GameObject dialogue;
 
+    public GameObject cursor;
+
     public bool muffelbrumm;
     public bool bubble;
 
@@ -79,10 +81,10 @@ public class muffelbrummButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = true;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = false;
     }
 }

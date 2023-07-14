@@ -117,7 +117,7 @@ public class cameraMovement : MonoBehaviour
             }
         }
 
-        if (onStart == true)
+        if (onStart == true && progressManager.comingFrom == 0)
         {
             if (transform.position != startPos && repos == true)
             {
@@ -142,7 +142,7 @@ public class cameraMovement : MonoBehaviour
 
 
 
-        if (inRoom1 == true)
+        if (inRoom1 == true || progressManager.comingFrom == 1)
         {
             if (transform.position != room1 && repos == true)
             {
@@ -162,9 +162,10 @@ public class cameraMovement : MonoBehaviour
             room2box.SetActive(true);
             room3box.SetActive(true);
             room4box.SetActive(true);
+            progressManager.comingFrom = 0;
         }
 
-        if (inRoom2 == true)
+        if (inRoom2 == true || progressManager.comingFrom == 2)
         {
             if (transform.position != room2 && repos == true)
             {
@@ -184,8 +185,9 @@ public class cameraMovement : MonoBehaviour
             room2box.SetActive(false);
             room3box.SetActive(true);
             room4box.SetActive(true);
+            progressManager.comingFrom = 0;
         }
-        if (inRoom3 == true)
+        if (inRoom3 == true || progressManager.comingFrom == 3)
         {
             if (transform.position != room3 && repos == true)
             {
@@ -205,8 +207,9 @@ public class cameraMovement : MonoBehaviour
             room2box.SetActive(true);
             room3box.SetActive(false);
             room4box.SetActive(true);
+            progressManager.comingFrom = 0;
         }
-        if (inRoom4 == true)
+        if (inRoom4 == true || progressManager.comingFrom == 4)
         {
             if (player.GetComponent<playerMovement>().transform.position.y > -2)
             {
@@ -237,8 +240,9 @@ public class cameraMovement : MonoBehaviour
 
             room1box.SetActive(true);
             room2box.SetActive(true);
-            room3box.SetActive(true);
+            room3box.SetActive(true); 
             room4box.SetActive(false);
+            progressManager.comingFrom = 0;
         }
     }
 }

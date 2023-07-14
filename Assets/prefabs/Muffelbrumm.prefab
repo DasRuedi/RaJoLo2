@@ -111,11 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30333cf6a322e2f4998e9ea255e41864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muffelBody: {fileID: 0}
-  speechBubble: {fileID: 0}
-  dialogue: {fileID: 0}
+  muffelBody: {fileID: 5559176273722088531}
+  speechBubble: {fileID: 6520352928591192639}
+  dialogue: {fileID: 6520352928591192639}
+  cursor: {fileID: 0}
   muffelbrumm: 1
-  bubble: 0
+  bubble: 1
   invisible: 0
 --- !u!1 &5559176273722088531
 GameObject:
@@ -301,6 +302,7 @@ MonoBehaviour:
   muffelBody: {fileID: 0}
   speechBubble: {fileID: 6520352928591192639}
   dialogue: {fileID: 6520352928591192639}
+  cursor: {fileID: 0}
   muffelbrumm: 0
   bubble: 1
   invisible: 0
@@ -317,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 5559176273722088531}
+  question: {fileID: 0}
   dialogueBox: {fileID: 2050687496738792008}
   chapter1: 0
   sentences1: []
@@ -326,3 +329,5 @@ MonoBehaviour:
   sentences3: []
   dialogueProgress: 0
   dialogueLength: 0
+  gameReady: 0
+  endOfDialogue: 0

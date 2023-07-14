@@ -6,4 +6,6 @@ public class progressManager : MonoBehaviour
 {
     public static bool angerGameDone;
 
+    public static int comingFrom;
+
 }

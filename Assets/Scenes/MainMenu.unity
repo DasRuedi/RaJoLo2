@@ -238,6 +238,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   mood: {fileID: 0}
   breath: {fileID: 0}
+  cursor: {fileID: 739518436}
   startButton: 1
   ok: 0
   delete: 0
@@ -352,6 +353,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &739518436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739518438}
+  - component: {fileID: 739518437}
+  m_Layer: 0
+  m_Name: Cursor Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739518437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739518436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df2dad36ad92914ba1b62181592de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture:
+  - {fileID: 2800000, guid: 4017a3f449c0d6b4c83be838d10b3f95, type: 3}
+  - {fileID: 2800000, guid: 774c74d6298a6f748b7efdb733976b1a, type: 3}
+  - {fileID: 2800000, guid: e11e3994d4762d24dabe83baeebd0f0b, type: 3}
+  - {fileID: 2800000, guid: dc5cd01615d7db1499fe5e2a9dfca1cf, type: 3}
+  spriteChoice: 0
+  cursorHotspot: {x: 0, y: 0}
+  jitter: 0
+  jitterTime: 0
+  jitterRate: 0.1
+--- !u!4 &739518438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739518436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.0762596, y: 2.8255842, z: 2.1659951}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594382507
 GameObject:

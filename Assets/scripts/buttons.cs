@@ -9,6 +9,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     public GameObject gameManager;
     public GameObject mood;
     public GameObject breath;
+    public GameObject cursor;
 
     public bool startButton;
     public bool ok;
@@ -115,10 +116,10 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = true;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = false;
     }
 }
