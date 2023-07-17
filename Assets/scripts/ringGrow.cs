@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ringGrow : MonoBehaviour
 {
+    public GameObject bubbleBubbler;
+
     public float growth;
     public float scale;
     public float baseScale;
@@ -41,6 +43,7 @@ public class ringGrow : MonoBehaviour
             if (scale > baseScale)
             {
                 scale -= Time.deltaTime * growth * 1.5f;
+                bubbleBubbler.GetComponent<SeifenBlas>().BlowBubbles();
             }
             if (scale <= baseScale)
             {

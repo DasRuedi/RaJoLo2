@@ -18,6 +18,7 @@ public class objectToDestroy : MonoBehaviour
     public Sprite[] tv;
     public Sprite[] sack;
     public Sprite[] karton;
+    public Sprite[] pinata;
 
     public int hitsTaken;
 
@@ -38,7 +39,7 @@ public class objectToDestroy : MonoBehaviour
 
     void Start()
     {
-        smashableChoice = Random.Range(1, 4);
+        smashableChoice = Random.Range(1, 5);
         prevChoice = smashableChoice;
 
         if (smashableChoice == 1)
@@ -52,6 +53,10 @@ public class objectToDestroy : MonoBehaviour
         if (smashableChoice == 3)
         {
             image.GetComponent<SpriteRenderer>().sprite = karton[spriteChoice];
+        }
+        if (smashableChoice == 4)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = pinata[spriteChoice];
         }
 
     }
@@ -73,6 +78,10 @@ public class objectToDestroy : MonoBehaviour
         {
             image.GetComponent<SpriteRenderer>().sprite = karton[spriteChoice];
         }
+        if (smashableChoice == 4)
+        {
+            image.GetComponent<SpriteRenderer>().sprite = pinata[spriteChoice];
+        }
 
         if (hitsTaken >= damageThreshold && hitsTaken < destroyThreshold)
         {
@@ -90,7 +99,7 @@ public class objectToDestroy : MonoBehaviour
 
         if (smashableChoice <= 0)
         {
-            smashableChoice = 3;
+            smashableChoice = 4;
         }
 
         if (transform.position.x <= -40)
@@ -98,7 +107,7 @@ public class objectToDestroy : MonoBehaviour
             reset = true;
             repos = true;
 
-            smashableChoice = Random.Range(1, 4);
+            smashableChoice = Random.Range(1, 5);
 
             if (smashableChoice == prevChoice)
             {
