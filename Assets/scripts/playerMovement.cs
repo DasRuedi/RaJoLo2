@@ -86,7 +86,7 @@ public class playerMovement : MonoBehaviour
                 if (isMoving == false)
                 {
                     // Hier wird Idle ersetzt durch die erste Animation
-                    // Idle -> clumbUp
+                    // Idle -> climbUp
                     if(idle == true)
                     {
                         climbUp = true;
@@ -127,7 +127,6 @@ public class playerMovement : MonoBehaviour
                     climbUp = false;
                 }
             }
-                
 
         }
 
@@ -427,7 +426,7 @@ public class playerMovement : MonoBehaviour
                 // hier wird von der ersten zur zweiten animation gewechselt
                 // shameWalk -> shameIdle
 
-                if(sadWalk == true)
+                if(shameWalk == true)
                 {
                     shameIdle = true;
                     shameWalk = false;
