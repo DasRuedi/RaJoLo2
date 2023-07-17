@@ -30,6 +30,27 @@ public class playerMovement : MonoBehaviour
 
     public float speed;
 
+    public Animator anim;
+    //public Animator animCreature; //Damit Creature im Schamraum hoch bzw runter guckt.
+
+
+
+    public bool idle;
+
+    public bool angryIdle;
+    public bool afraidIdle;
+    public bool sadIdle;
+    public bool shameIdle;
+
+    public bool angryWalk;
+    public bool sadWalk;
+    public bool shameWalk;
+
+    public bool climbDown;
+    public bool climbUp;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +62,11 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetAnim();
 
         if (cam.GetComponent<cameraMovement>().inRoom1)
         {
+
             if (getRoom == true)
             {
                 if (currRoom == 1)
@@ -63,13 +85,24 @@ public class playerMovement : MonoBehaviour
             {
                 if (isMoving == false)
                 {
+                    // Hier wird Idle ersetzt durch die erste Animation
+                    // Idle -> climbUp
+                    if(idle == true)
+                    {
+                        climbUp = true;
+                        idle = false;
+                    }
+
                     transform.position = enterRoom1;
                     isMoving = true;
                 }
 
                 if (transform.position.y < room1Pos.y && isMoving == true)
                 {
+
                     transform.Translate(Vector3.up * Time.deltaTime * speed);
+
+
 
                     if (transform.localScale.x > 0)
                     {
@@ -83,6 +116,18 @@ public class playerMovement : MonoBehaviour
                     currRoom = 1;
                 }
             }
+
+            if (isMoving == false && currRoom == 1)
+            {
+                // hier wird von der ersten zur zweiten animation gewechselt
+                // climbUp -> afraidIdle
+                if(climbUp == true)
+                {
+                    afraidIdle = true;
+                    climbUp = false;
+                }
+            }
+
         }
 
         if (cam.GetComponent<cameraMovement>().inRoom2)
@@ -107,11 +152,29 @@ public class playerMovement : MonoBehaviour
                 {
                     if (currRoom == 1)
                     {
+                        // Hier wird Idle ersetzt durch die erste Animation
+                        // In diesem Fall kommt Nora von oben
+                        // Idle -> climbDown
+                        if(idle == true)
+                        {
+                            climbDown = true;
+                            idle = false;
+                        }
+
                         transform.position = enterRoom2a;
                         isMoving = true;
                     }
                     if (currRoom != 1 && currRoom != 2)
                     {
+                        // Hier wird Idle ersetzt durch die erste Animation
+                        // In diesem Fall kommt Nora von rechts
+                        // Idle -> angryWalk
+                        if(idle == true)
+                        {
+                            angryWalk = true;
+                            idle = false;
+                        }
+
                         transform.position = enterRoom2b;
                         isMoving = true;
                     }
@@ -123,6 +186,7 @@ public class playerMovement : MonoBehaviour
                     {
                         if (transform.position.y > room2Pos.y)
                         {
+
                             transform.Translate(Vector3.down * Time.deltaTime * speed);
 
                             if (transform.localScale.x > 0)
@@ -142,6 +206,7 @@ public class playerMovement : MonoBehaviour
                     {
                         if (transform.position.x > room2Pos.x)
                         {
+
                             transform.Translate(Vector3.left * Time.deltaTime * speed);
 
                             if (transform.localScale.x > 0)
@@ -156,6 +221,26 @@ public class playerMovement : MonoBehaviour
                             currRoom = 2;
                         }
                     }
+                }
+            }
+            if (isMoving == false && currRoom == 2)
+            {
+                // hier wird von der ersten zur zweiten animation gewechselt
+
+                // Nora kommt von oben?
+                // climbDown -> angryIdle
+                if(climbDown == true)
+                {
+                    angryIdle = true;
+                    climbDown = false;
+                }
+
+                // Nora kommt von rechts?
+                // angryWalk -> angryIdle
+                if(angryWalk == true)
+                {
+                    angryIdle = true;
+                    angryWalk = false;
                 }
             }
         }
@@ -180,6 +265,18 @@ public class playerMovement : MonoBehaviour
             {
                 if (isMoving == false)
                 {
+                    
+                    // Hier wird Idle ersetzt durch die erste Animation
+                    // Idle -> sadWalk (?)
+
+                    
+                    if(idle == true)
+                    {
+                        sadWalk = true;
+                        idle = false;
+                    }
+                    
+
                     transform.position = enterRoom3;
                     isMoving = true;
                 }
@@ -200,6 +297,20 @@ public class playerMovement : MonoBehaviour
                     currRoom = 3;
                 }
             }
+
+            
+            if (isMoving == false && currRoom == 1)
+            {
+                // hier wird von der ersten zur zweiten animation gewechselt
+                // sadWalk -> sadIdle
+
+                if(sadWalk == true)
+                {
+                    sadIdle = true;
+                    sadWalk = false;
+                }
+            }
+            
         }
 
         if (cam.GetComponent<cameraMovement>().inRoom4)
@@ -208,6 +319,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (currRoom == 4)
                 {
+                    
                     inCurrRoom = true;
                     getRoom = false;
                 }
@@ -224,13 +336,45 @@ public class playerMovement : MonoBehaviour
                 {
                     if (currRoom != 3)
                     {
+                        // Hier wird Idle ersetzt durch die erste Animation
+                        // In diesem Fall kommt Nora von oben
+                        // Idle -> shameWalk
+
+                        
+                        if(idle == true)
+                        {
+                            shameWalk = true;
+                            idle = false;
+                        }
+                        
+
+                        // egal ob oben oder unten, die animation ist bei beiden Fällen gleich
+
                         transform.position = enterRoom4a;
                         isMoving = true;
+                        /*animCreature.SetBool("Oben", true);
+                        animCreature.SetBool("Unten", false);*/ //Hat nicht geklappt ich konnte den Animator Controller nicht reindraggen
                     }
                     if (currRoom == 3)
                     {
+                        // Hier wird Idle ersetzt durch die erste Animation
+                        // In diesem Fall kommt Nora von unten
+                        // Idle -> shameWalk
+
+                        
+                        if(idle == true)
+                        {
+                            shameWalk = true;
+                            idle = false;
+                        }
+                        
+
+                        // egal ob oben oder unten, die animation ist bei beiden Fällen gleich
+
                         transform.position = enterRoom4b;
                         isMoving = true;
+                        /*animCreature.SetBool("Oben", false);
+                        animCreature.SetBool("Unten", true);*/
                     }
                 }
 
@@ -275,7 +419,122 @@ public class playerMovement : MonoBehaviour
                     }
                 }
             }
+
+            
+            if (isMoving == false && currRoom == 1)
+            {
+                // hier wird von der ersten zur zweiten animation gewechselt
+                // shameWalk -> shameIdle
+
+                if(shameWalk == true)
+                {
+                    shameIdle = true;
+                    shameWalk = false;
+                }
+            }
+            
         }
 
+    }
+
+    public void GetAnim()
+    {
+        if(idle == true)
+        {
+            anim.SetBool("Idle", true);
+            anim.SetBool("angry", false);
+            anim.SetBool("afraid", false);
+            anim.SetBool("redwalk", false);
+            anim.SetBool("redClimb", false);
+            anim.SetBool("purpleClimb", false);
+            anim.SetBool("bluewalk", false);
+            anim.SetBool("yellowwalk", false);
+            anim.SetBool("shame", false);
+            anim.SetBool("sad", false);
+            anim.SetBool("happy", false);
+        }
+
+        if(angryIdle == true)
+        {
+            anim.SetBool("angry", true);
+            anim.SetBool("redClimb", false);
+            anim.SetBool("redwalk", false);
+            anim.SetBool("Idle", false);
+        }
+
+        if(afraidIdle == true)
+        {
+            anim.SetBool("afraid", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("purpleClimb", false);
+        }
+
+        if(sadIdle == true)
+        {
+            
+            anim.SetBool("sad", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("bluewalk", false);
+            
+        }
+
+        if(shameIdle == true)
+        {
+            
+            anim.SetBool("shame", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("yellowwalk", false);
+            
+        }
+
+        if(angryWalk == true)
+        {
+            anim.SetBool("redwalk", true);
+            anim.SetBool("Idle", false);
+        }
+
+        if(sadWalk == true)
+        {
+            
+            anim.SetBool("bluewalk", true);
+            anim.SetBool("Idle", false);
+            
+        }
+
+        if(shameWalk == true)
+        {
+            
+            anim.SetBool("yellowwalk", true);
+            anim.SetBool("Idle", false);
+            
+        }
+
+        if(climbDown == true)
+        {
+            anim.SetBool("redClimb", true);
+            anim.SetBool("Idle", false);
+        }
+        if (climbUp == true)
+        {
+            anim.SetBool("purpleClimb", true);
+            anim.SetBool("Idle", false);
+        }
+
+
+
+    }
+
+    public void ResetAnim()
+    {
+        idle = true;
+        angryIdle = false;
+        afraidIdle = false;
+        sadIdle = false;
+        shameIdle = false;
+        angryWalk = false;
+        sadWalk = false;
+        shameWalk = false;
+        climbDown = false;
+        climbUp = false;
     }
 }

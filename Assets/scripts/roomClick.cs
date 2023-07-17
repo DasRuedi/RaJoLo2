@@ -15,6 +15,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 
     public bool entering;
 
+
     public void Start()
     {
 
@@ -50,6 +51,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 2)
             {
@@ -61,6 +63,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 3)
             {
@@ -72,6 +75,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 4)
             {
@@ -83,6 +87,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = true;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                player.GetComponent<playerMovement>().ResetAnim();
             }
 
         }

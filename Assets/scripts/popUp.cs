@@ -188,7 +188,6 @@ public class popUp : MonoBehaviour
 
         if (roomManager.GetComponent<roomClick>().entering == true)
         {
-            Debug.Log("resetting");
             roomManager.GetComponent<roomClick>().resetObjects++;
         }
         reset = false;

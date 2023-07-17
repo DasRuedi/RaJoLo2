@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5220406790596421001}
   - component: {fileID: 2395414484419450115}
   - component: {fileID: 4161547788465282280}
+  - component: {fileID: 1890971492523895123}
   m_Layer: 0
   m_Name: muffelbrumm1
   m_TagString: Untagged
@@ -118,6 +119,26 @@ MonoBehaviour:
   muffelbrumm: 1
   bubble: 1
   invisible: 0
+--- !u!95 &1890971492523895123
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635960667448171429}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15d00761720171d4dba050155b557252, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5559176273722088531
 GameObject:
   m_ObjectHideFlags: 0

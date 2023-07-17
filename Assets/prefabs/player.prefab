@@ -63,6 +63,13 @@ MonoBehaviour:
   room4PosB: {x: 0, y: 0, z: 0}
   orientation: 1
   speed: 0
+  anim: {fileID: 8347386368419312652}
+  idle: 0
+  angryIdle: 0
+  afraidIdle: 0
+  angryWalk: 0
+  climbDown: 0
+  climbUp: 0
 --- !u!1 &7455616190519495489
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,8 +97,8 @@ Transform:
   m_GameObject: {fileID: 7455616190519495489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.05, y: 0.1329, z: 0}
-  m_LocalScale: {x: 0.26534823, y: 0.26534823, z: 0.26534823}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.17622307, y: 0.17622307, z: 0.17622307}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6257497779886153985}
   m_RootOrder: 0
@@ -158,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 7455616190519495489}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34526af8d6d233643966b8dd5569c756, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
