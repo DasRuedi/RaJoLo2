@@ -49,6 +49,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   mood: {fileID: 0}
   smashableChoice: 0
+  prevChoice: 0
   image: {fileID: 0}
   spriteChoice: 0
   tv:
@@ -57,12 +58,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0d136e51bb00ab847afbc57142e3d7b0, type: 3}
   sack:
   - {fileID: 21300000, guid: eecf572b3de32bf4a9fbfe0233e6d9e5, type: 3}
-  - {fileID: 21300000, guid: b721de79f99880641bc88ed9d35c3961, type: 3}
-  - {fileID: 21300000, guid: 5c8e702844cf4db4c90666456a443f1c, type: 3}
+  - {fileID: 21300000, guid: 1e5f9acf64afa804e8165df8fa7d1af8, type: 3}
+  - {fileID: 21300000, guid: 7e448b679f154d74385576ea6a09295a, type: 3}
   karton:
   - {fileID: 21300000, guid: bd67a81703b40cb40bc55f2f5cc9ddc7, type: 3}
-  - {fileID: 21300000, guid: 8e3b87f6f13aa9845ac69910a685d0b2, type: 3}
-  - {fileID: 21300000, guid: 6c3f613aa818c5b4ca4a2be080f272b0, type: 3}
+  - {fileID: 21300000, guid: 5180aee01773ed24db2e080181583bf4, type: 3}
+  - {fileID: 21300000, guid: c9df963304b63de40aca9e436797046e, type: 3}
   hitsTaken: 0
   damageThreshold: 3
   damageValue: 0.7
