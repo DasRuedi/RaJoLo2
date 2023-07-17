@@ -24,6 +24,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
     public void Start()
     {
+        FindObjectOfType<AudioManager>().Play("malen");
         startPos = transform.position;
     }
 
@@ -88,11 +89,17 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
         if (ok == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.TRANSITION;
+            FindObjectOfType<AudioManager>().Play("Check");
+            FindObjectOfType<AudioManager>().StopPlaying("malen");
+            FindObjectOfType<AudioManager>().Play("destroy");
+            //CHeck
         }
 
         if (delete == true)
         {
             gameManager.GetComponent<miniGameManager>().state = GameState.DELETE;
+            FindObjectOfType<AudioManager>().Play("DrawAgain");
+            //Delete
         }
 
         if (endAnger == true)
