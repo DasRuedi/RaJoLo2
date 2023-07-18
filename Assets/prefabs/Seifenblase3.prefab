@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: da811159fc51ae844a7e0d47e40d8a50, type: 3}
   - {fileID: 21300000, guid: af851ace4c98bb3459296f1f57047ebb, type: 3}
   spriteChoice: 0
+  popChoice: 0
   speed: 0
   lifeTime: 0
   lifeSpan: 0

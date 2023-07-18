@@ -1225,7 +1225,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: smash2
     clip: {fileID: 8300000, guid: cd95c1b539bbb0d449452b76f259ba81, type: 3}
-    volume: 1
+    volume: 0.029
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: squeak2
+    clip: {fileID: 8300000, guid: e6c8ce71869dfa64193182ed97d047f5, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: KistenSmash
+    clip: {fileID: 8300000, guid: 720be480ae5637f4cbf67f663e15d3ce, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SackSmash
+    clip: {fileID: 8300000, guid: 171b16b314ae323408b74e16c67a461f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: tvsmash
+    clip: {fileID: 8300000, guid: cbe125731f1d00944b5762a95657e3b2, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}

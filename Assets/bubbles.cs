@@ -8,6 +8,8 @@ public class bubbles : MonoBehaviour
 
     public int spriteChoice;
 
+    public int popChoice;
+
     public float speed;
 
     public float lifeTime;
@@ -36,6 +38,7 @@ public class bubbles : MonoBehaviour
         lifeSpan = Random.Range(0.1f, 5f);
         blowScale = Random.Range(0.01f, 0.15f);
         growth = Random.Range(-0.1f, 0.1f);
+        popChoice = Random.Range(1,5);
     }
 
     void Update()
@@ -91,6 +94,24 @@ public class bubbles : MonoBehaviour
         {
             transform.localScale = new Vector3(scale, scale, scale);
             spriteChoice = 3;
+            /*if(popChoice == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("bubblePop");
+            }
+            if(popChoice == 2)
+            {
+                FindObjectOfType<AudioManager>().Play("bubblePop2");
+            }
+            if(popChoice == 3)
+            {
+                FindObjectOfType<AudioManager>().Play("bubblePop3");
+            }
+            if(popChoice == 4)
+            {
+                FindObjectOfType<AudioManager>().Play("bubblePop4");
+            }*/
+
+            
         }
 
         if (lifeTime >= lifeSpan)
