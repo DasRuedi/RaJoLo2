@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
+    public GameObject paper;
+
     public Texture2D[] cursorTexture;
+
+    public Texture2D crayonTexture;
 
     public int spriteChoice;
 
@@ -14,6 +18,8 @@ public class CursorManager : MonoBehaviour
     public float jitterTime;
     public float jitterRate;
 
+
+
     void Start()
     {
         cursorHotspot = new Vector2(cursorTexture[0].width / 2, cursorTexture[0].height / 2);
@@ -22,7 +28,10 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
-        Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);
+        if (paper.GetComponent<paperClickEvent>().drawing == false)
+        {
+            Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);
+        }
 
         if (jitter == true)
         {
@@ -46,6 +55,11 @@ public class CursorManager : MonoBehaviour
         if (jitter == false)
         {
             spriteChoice = 0;
+        }
+
+        if (paper.GetComponent<paperClickEvent>().drawing == true)
+        {
+            Cursor.SetCursor(crayonTexture, cursorHotspot, CursorMode.Auto);
         }
     }
 }
