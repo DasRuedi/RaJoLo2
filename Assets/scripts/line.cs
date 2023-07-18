@@ -28,7 +28,6 @@ public class line : MonoBehaviour
 
         if (Vector2.Distance(points.Last(), position) > 0.1f)
         {
-            Debug.Log("SetPoint");
             SetPoint(position);
         }
     }

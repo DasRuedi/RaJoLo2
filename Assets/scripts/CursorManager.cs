@@ -19,7 +19,7 @@ public class CursorManager : MonoBehaviour
         cursorHotspot = new Vector2(cursorTexture[0].width / 2, cursorTexture[0].height / 2);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);

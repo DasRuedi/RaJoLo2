@@ -19,13 +19,13 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
 
 
-    Vector3 startPos;
+    public Vector3 startPos;
     public Vector3 inactivePos;
 
     public void Start()
     {
-        FindObjectOfType<AudioManager>().Play("malen");
         startPos = transform.position;
+        FindObjectOfType<AudioManager>().Play("malen");
     }
 
     public void Update()

@@ -36,7 +36,15 @@ public class ringGrow : MonoBehaviour
 
         if (breatheIn == true)
         {
-            scale += Time.deltaTime * growth;
+            if (scale < limit)
+            {
+                scale += Time.deltaTime * growth;
+            }
+            if (scale >= limit)
+            {
+                scale += Time.deltaTime * (growth / 2f);
+            }
+
         }
         if (breatheOut == true)
         {

@@ -48,10 +48,12 @@ public class miniGameManager : MonoBehaviour
 
         if (state == GameState.END)
         {
-            if (smash == true)
+            if (breathe == true)
             {
                 progressManager.angerGameDone = true;
                 progressManager.comingFrom = 2;
+
+                Debug.Log("coming from " + progressManager.comingFrom);
             }
 
             SceneManager.LoadScene("House");

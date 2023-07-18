@@ -7,6 +7,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
 {
     public GameObject cam;
     public GameObject player;
+    public GameObject cursor;
 
     public int room;
 
@@ -51,6 +52,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 2)
@@ -63,6 +65,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 3)
@@ -75,6 +78,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
             }
             if (room == 4)
@@ -87,6 +91,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom4 = true;
                 cam.GetComponent<cameraMovement>().repos = true;
                 player.GetComponent<playerMovement>().getRoom = true;
+                cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
             }
 
@@ -102,10 +107,10 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = true;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-
+        cursor.GetComponent<CursorManager>().jitter = false;
     }
 }

@@ -10,6 +10,7 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public GameObject yesButton;
     public GameObject noButton;
     public GameObject cursor;
+    
 
     public bool yes;
     public bool no;
@@ -35,12 +36,16 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             asking = question.GetComponent<playGameButtons>().asking;
             answered = question.GetComponent<playGameButtons>().answered;
+
         }
 
         if (yes == false && no == false)
         {
             if (asking == false)
             {
+                noButton.GetComponent<jiggle>().hoverOver = false;
+                yesButton.GetComponent<jiggle>().hoverOver = false;
+
                 yesButton.SetActive(false);
                 noButton.SetActive(false);
             }
@@ -60,7 +65,6 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             alpha = 0;
         }
-
     }
 
     public void OnPointerDown(PointerEventData eventData)
