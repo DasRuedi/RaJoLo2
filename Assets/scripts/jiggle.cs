@@ -10,11 +10,14 @@ public class jiggle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
     public bool jittering;
 
     public Sprite[] sprites;
+    public Sprite idleSprite;
+
     public int spriteChoice;
     public float jitterTime;
     public float jitterRate;
 
     public bool jiggling;
+    public bool hasIdleState;
 
     public float jiggleSpeed;
     public float jiggleTime;
@@ -45,6 +48,13 @@ public class jiggle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPo
                 if (spriteChoice >= sprites.Length)
                 {
                     spriteChoice = 0;
+                }
+            }
+            if (hasIdleState == true)
+            {
+                if (hoverOver == false)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().sprite = idleSprite;
                 }
             }
         }

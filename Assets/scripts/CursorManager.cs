@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CursorManager : MonoBehaviour
@@ -18,6 +19,8 @@ public class CursorManager : MonoBehaviour
     public float jitterTime;
     public float jitterRate;
 
+    public bool anger;
+
 
 
     void Start()
@@ -28,9 +31,18 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
-        if (paper.GetComponent<paperClickEvent>().drawing == false)
+        if (anger == true)
         {
-            Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);
+            if (paper.GetComponent<paperClickEvent>().drawing == false)
+            {
+                Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);
+            }
+
+            if (paper.GetComponent<paperClickEvent>().drawing == true)
+            {
+                Cursor.SetCursor(crayonTexture, cursorHotspot, CursorMode.Auto);
+            }
+
         }
 
         if (jitter == true)
@@ -57,9 +69,5 @@ public class CursorManager : MonoBehaviour
             spriteChoice = 0;
         }
 
-        if (paper.GetComponent<paperClickEvent>().drawing == true)
-        {
-            Cursor.SetCursor(crayonTexture, cursorHotspot, CursorMode.Auto);
-        }
     }
 }
