@@ -129,6 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352689302e8c62645a61efea803f89c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smashEffect: {fileID: 6367517828570436158}
+  sprites:
+  - {fileID: 21300000, guid: f5a447790bc6d4c49a73b1c9a90087d8, type: 3}
+  - {fileID: 21300000, guid: 17fd83741a5b92041b348a0a9c02c4f0, type: 3}
+  - {fileID: 21300000, guid: 74d67ec57aecc174a8d22287e7e0e88a, type: 3}
+  spriteChoice: 0
   LifeTime: 0
   lifeSpan: 0.1
   randRota: 0

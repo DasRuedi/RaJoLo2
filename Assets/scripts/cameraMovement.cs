@@ -55,6 +55,7 @@ public class cameraMovement : MonoBehaviour
     void Update()
     {
 
+        Debug.Log("coming from " + progressManager.comingFrom);
 
         if (Input.GetKey("w"))
         {
@@ -100,7 +101,8 @@ public class cameraMovement : MonoBehaviour
                 transform.position = new Vector3(limitRight, transform.position.y, transform.position.z);
             }
         }
-        if (Input.GetKey("q"))
+
+        if (Input.GetKey("escape"))
         {
             if (player.GetComponent<playerMovement>().isMoving == false)
             {
@@ -117,7 +119,28 @@ public class cameraMovement : MonoBehaviour
             }
         }
 
-        if (onStart == true && progressManager.comingFrom == 0)
+        if (progressManager.comingFrom == 1)
+        {
+            onStart = false;
+            inRoom1 = true;
+        }
+        if (progressManager.comingFrom == 2)
+        {
+            onStart = false;
+            inRoom2 = true;
+        }
+        if (progressManager.comingFrom == 3)
+        {
+            onStart = false;
+            inRoom3 = true;
+        }
+        if (progressManager.comingFrom == 4)
+        {
+            onStart = false;
+            inRoom4 = true;
+        }
+
+        if (onStart == true)
         {
             if (transform.position != startPos && repos == true)
             {
@@ -142,7 +165,7 @@ public class cameraMovement : MonoBehaviour
 
 
 
-        if (inRoom1 == true || progressManager.comingFrom == 1)
+        if (inRoom1 == true)
         {
             if (transform.position != room1 && repos == true)
             {
@@ -165,7 +188,7 @@ public class cameraMovement : MonoBehaviour
             progressManager.comingFrom = 0;
         }
 
-        if (inRoom2 == true || progressManager.comingFrom == 2)
+        if (inRoom2 == true)
         {
             if (transform.position != room2 && repos == true)
             {
@@ -187,7 +210,7 @@ public class cameraMovement : MonoBehaviour
             room4box.SetActive(true);
             progressManager.comingFrom = 0;
         }
-        if (inRoom3 == true || progressManager.comingFrom == 3)
+        if (inRoom3 == true)
         {
             if (transform.position != room3 && repos == true)
             {
@@ -209,7 +232,7 @@ public class cameraMovement : MonoBehaviour
             room4box.SetActive(true);
             progressManager.comingFrom = 0;
         }
-        if (inRoom4 == true || progressManager.comingFrom == 4)
+        if (inRoom4 == true)
         {
             if (player.GetComponent<playerMovement>().transform.position.y > -2)
             {

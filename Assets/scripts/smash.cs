@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class smash : MonoBehaviour
 {
+    public GameObject smashEffect;
+    public Sprite[] sprites;
+    public int spriteChoice;
+
     public float LifeTime;
     public float lifeSpan;
 
@@ -17,12 +21,15 @@ public class smash : MonoBehaviour
 
         transform.Rotate(0, 0, randRota);
         transform.localScale = new Vector3(randScale, randScale, 0);
+        spriteChoice = Random.Range(0, sprites.Length);
     }
 
 
     void Update()
     {
         LifeTime += Time.deltaTime;
+
+        smashEffect.GetComponent<SpriteRenderer>().sprite = sprites[spriteChoice];
 
         if (LifeTime >= lifeSpan)
         {
