@@ -38,6 +38,7 @@ public class SeifenTunk : MonoBehaviour
         if (tunk == true)
         {
             spriteTime += Time.deltaTime;
+             
 
             if (spriteTime >= spriteRate)
             {

@@ -62,8 +62,8 @@ public class SeifenBlas : MonoBehaviour
     {
         reBubbleTime += Time.deltaTime;
         bubbleAmount = Random.Range(0, 5);
-
         if (reBubbleTime >= reBubbleRate)
+       
         {
             for (int i = 0; i < bubbleAmount; i++)
             {

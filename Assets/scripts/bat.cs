@@ -66,8 +66,25 @@ public class bat : MonoBehaviour
                     if (transform.rotation.z >= hitRotation)
                     {
                         Instantiate(smash, smashSpawn, Quaternion.identity);
+                        if (objectToDestroy.GetComponent<objectToDestroy>().smashableChoice == 4)
+                        {
+                            FindObjectOfType<AudioManager>().Play("squeak2");
+                        }
+                        if (objectToDestroy.GetComponent<objectToDestroy>().smashableChoice == 3)
+                        {
+                            FindObjectOfType<AudioManager>().Play("KistenSmash");
+                        }
+                        if (objectToDestroy.GetComponent<objectToDestroy>().smashableChoice == 2)
+                        {
+                            FindObjectOfType<AudioManager>().Play("SackSmash");
+                        }
+                        if (objectToDestroy.GetComponent<objectToDestroy>().smashableChoice == 1)
+                        {
+                            FindObjectOfType<AudioManager>().Play("tvsmash");
+                        }
                         hits++;
                         preImpact = false;
+
                     }
                 }
 

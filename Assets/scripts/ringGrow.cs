@@ -48,10 +48,12 @@ public class ringGrow : MonoBehaviour
         }
         if (breatheOut == true)
         {
+            
             if (scale > baseScale)
             {
                 scale -= Time.deltaTime * growth * 1.5f;
                 bubbleBubbler.GetComponent<SeifenBlas>().BlowBubbles();
+
             }
             if (scale <= baseScale)
             {
@@ -73,6 +75,8 @@ public class ringGrow : MonoBehaviour
         {
             breatheIn = false;
             breatheOut = true;
+            FindObjectOfType<AudioManager>().Play("Wind3");
+            FindObjectOfType<AudioManager>().Play("bubble");
         }
 
 

@@ -23,7 +23,9 @@ public class AudioManager : MonoBehaviour
 
      void Start()
     {
+        Play("atmen");
         Play("Menu");
+        Play("Wind2");
     }
 
     public void Play (string name)
@@ -35,12 +37,12 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play(); //ERROR: No Sound found/ worng name
     }
+
     public void StopPlaying (string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
         if (s == null)
         {
-        Debug.LogWarning("Sound: " + name + " not found!");
         return;
         }
 
@@ -48,5 +50,6 @@ public class AudioManager : MonoBehaviour
         s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitch / 2f, s.pitch / 2f));
 
         s.source.Stop ();
+
     }
 }

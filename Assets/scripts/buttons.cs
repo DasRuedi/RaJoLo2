@@ -83,6 +83,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
 
         if (startButton == true)
         {
+            FindObjectOfType<AudioManager>().Play("start");
             SceneManager.LoadScene("House");
         }
 
