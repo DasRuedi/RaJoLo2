@@ -863,8 +863,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Wind3
     clip: {fileID: 8300000, guid: 816ecf790da23a9428a01912a919fe27, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 1.5
+    pitch: 2.3
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1420701543
@@ -918,7 +918,11 @@ MonoBehaviour:
   mood: {fileID: 0}
   breath: {fileID: 1033718102}
   cursor: {fileID: 0}
+  mainMenu: {fileID: 0}
   startButton: 0
+  controlButton: 0
+  endButton: 0
+  backButton: 0
   ok: 0
   delete: 0
   endBreath: 1
@@ -1162,6 +1166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  gameManager: {fileID: 0}
+  okButton: {fileID: 0}
+  deleteButton: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: a4efc443aba1ef34dbf198cbb371ecd9, type: 3}
   - {fileID: 21300000, guid: 2e0fbbbd368f38e4d99b5868cbbdcc0e, type: 3}
@@ -1171,10 +1178,14 @@ MonoBehaviour:
   house: 0
   bubble: 1
   anger: 0
+  delete: 0
+  ok: 0
   swapTime: 0
   swapRate: 0.2
   smolInstruction: 0
   bigInstruction: 0
+  startPos: {x: 0, y: 0, z: 0}
+  inactPos: {x: 0, y: 0, z: 0}
 --- !u!212 &1474131928
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1528,6 +1539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  gameManager: {fileID: 0}
+  okButton: {fileID: 0}
+  deleteButton: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 6e0f8152e6f68e54abcd516693b7376b, type: 3}
   - {fileID: 21300000, guid: 426549372efd0ef499d1737bba5473fe, type: 3}
@@ -1537,10 +1551,14 @@ MonoBehaviour:
   house: 0
   bubble: 1
   anger: 0
+  delete: 0
+  ok: 0
   swapTime: 0
   swapRate: 0.2
   smolInstruction: 0
   bigInstruction: 0
+  startPos: {x: 0, y: 0, z: 0}
+  inactPos: {x: 0, y: 0, z: 0}
 --- !u!212 &1917950826
 SpriteRenderer:
   m_ObjectHideFlags: 0
