@@ -125,6 +125,15 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     public void OnPointerEnter(PointerEventData eventData)
     {
         cursor.GetComponent<CursorManager>().jitter = true;
+        if(endAnger)
+        {
+            FindObjectOfType<AudioManager>().Play("ja");
+        }
+        if(endBreath)
+        {
+            FindObjectOfType<AudioManager>().Play("ja");
+        }
+        
     }
     public void OnPointerExit(PointerEventData eventData)
     {

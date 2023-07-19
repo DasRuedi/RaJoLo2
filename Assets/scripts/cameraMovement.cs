@@ -49,6 +49,7 @@ public class cameraMovement : MonoBehaviour
     {
         onStart = true;
         repos = true;
+        FindObjectOfType<AudioManager>().Play("outside");
     }
 
     // Update is called once per frame
@@ -108,6 +109,8 @@ public class cameraMovement : MonoBehaviour
             {
                 if (onStart == false)
                 {
+                    FindObjectOfType<AudioManager>().Play("outside");
+                    FindObjectOfType<AudioManager>().StopPlaying("angry");
                     onStart = true;
                     inRoom1 = false;
                     inRoom2 = false;
@@ -169,6 +172,9 @@ public class cameraMovement : MonoBehaviour
         {
             if (transform.position != room1 && repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("angry");
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().Play("fear");
                 transform.position = room1;
                 currPos = room1;
                 repos = false;
@@ -192,6 +198,8 @@ public class cameraMovement : MonoBehaviour
         {
             if (transform.position != room2 && repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().Play("angry");
                 transform.position = room2;
                 currPos = room2;
                 repos = false;
@@ -214,6 +222,9 @@ public class cameraMovement : MonoBehaviour
         {
             if (transform.position != room3 && repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().Play("sad");
+                FindObjectOfType<AudioManager>().StopPlaying("angry");
                 transform.position = room3;
                 currPos = room3;
                 repos = false;
@@ -238,6 +249,9 @@ public class cameraMovement : MonoBehaviour
             {
                 if (transform.position != room4a && repos == true)
                 {
+                    FindObjectOfType<AudioManager>().StopPlaying("outside");
+                    FindObjectOfType<AudioManager>().Play("shame");
+                    FindObjectOfType<AudioManager>().StopPlaying("angry");
                     transform.position = room4a;
                     currPos = room4a;
                     repos = false;
