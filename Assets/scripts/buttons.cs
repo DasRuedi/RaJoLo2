@@ -10,8 +10,12 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     public GameObject mood;
     public GameObject breath;
     public GameObject cursor;
+    public GameObject mainMenu;
 
     public bool startButton;
+    public bool controlButton;
+    public bool endButton;
+
     public bool ok;
     public bool delete;
     public bool endBreath;
@@ -85,6 +89,12 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
         {
             FindObjectOfType<AudioManager>().Play("start");
             SceneManager.LoadScene("House");
+        }
+        
+        if (controlButton == true)
+        {
+            mainMenu.GetComponent<mainMenuManager>().controls = true;
+            mainMenu.GetComponent<mainMenuManager>().moveLeft = true;
         }
 
         if (ok == true)
