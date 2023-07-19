@@ -90,6 +90,15 @@ public class playGameButtons : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         cursor.GetComponent<CursorManager>().jitter = true;
+        if(yes)
+        {
+            FindObjectOfType<AudioManager>().Play("ja");
+        }
+        if(no)
+        {
+            FindObjectOfType<AudioManager>().Play("nein");
+        }
+        
     }
     public void OnPointerExit(PointerEventData eventData)
     {
