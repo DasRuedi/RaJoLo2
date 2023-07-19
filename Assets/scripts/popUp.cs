@@ -56,7 +56,7 @@ public class popUp : MonoBehaviour
 
         if (inRoom1 == true)
         {
-            if (cam.GetComponent<cameraMovement>().inRoom1 == true)
+            if (cam.GetComponent<cameraMovement>().inRoom1 == true && cam.GetComponent<cameraMovement>().repos == false)
             {
                 transform.position = startPos;
                 flip = true;
@@ -71,7 +71,7 @@ public class popUp : MonoBehaviour
         }
         if (inRoom2 == true)
         {
-            if (cam.GetComponent<cameraMovement>().inRoom2 == true)
+            if (cam.GetComponent<cameraMovement>().inRoom2 == true && cam.GetComponent<cameraMovement>().repos == false)
             {
                 transform.position = startPos;
                 flip = true;
@@ -86,7 +86,7 @@ public class popUp : MonoBehaviour
         }
         if (inRoom3 == true)
         {
-            if (cam.GetComponent<cameraMovement>().inRoom3 == true)
+            if (cam.GetComponent<cameraMovement>().inRoom3 == true && cam.GetComponent<cameraMovement>().repos == false)
             {
                 transform.position = startPos;
                 flip = true;
@@ -101,7 +101,7 @@ public class popUp : MonoBehaviour
         }
         if (inRoom4 == true)
         {
-            if (cam.GetComponent<cameraMovement>().inRoom4 == true)
+            if (cam.GetComponent<cameraMovement>().inRoom4 == true && cam.GetComponent<cameraMovement>().repos == false)
             {
                 transform.position = startPos;
                 flip = true;
@@ -178,6 +178,7 @@ public class popUp : MonoBehaviour
             }
         }
     }
+
 
     public void Reset()
     {

@@ -49,7 +49,7 @@ public class muffelbrummButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
         }
         if (bubble == true)
         {
-            if (dialogue.GetComponent<dialogue>().dialogueProgress < dialogue.GetComponent<dialogue>().dialogueLength)
+            if (dialogue.GetComponent<dialogue>().dialogueProgress < dialogue.GetComponent<dialogue>().dialogueLength -1)
             {
                 dialogue.GetComponent<dialogue>().dialogueProgress++;
             }

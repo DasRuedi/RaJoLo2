@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   player: {fileID: 3779360}
-  cursor: {fileID: 0}
+  cursor: {fileID: 1331649879}
   room: 2
   objectsInRoom: 0
   resetObjects: 0
@@ -946,11 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604256247978218551, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.634
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3604256247978218551, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.742
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 3604256247978218551, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.z
@@ -982,15 +982,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.222
+      value: 6.855
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.985
+      value: -3.213
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.658
+      value: 1.675
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalRotation.w
@@ -998,15 +998,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8837421135562979875, guid: 4122e00dcb36ce940a7a56d5bbd82790, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   player: {fileID: 3779360}
-  cursor: {fileID: 0}
+  cursor: {fileID: 1331649879}
   room: 3
   objectsInRoom: 0
   resetObjects: 0
@@ -2883,6 +2883,13 @@ MonoBehaviour:
   room3box: {fileID: 335108108}
   room4box: {fileID: 1647231195}
   baseSpeed: 1
+  panSpeed: 5
+  panBaseSpeed: 5
+  panStartDist: 0
+  panCurrDist: 0
+  panDistPercent: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  getDist: 0
   limitStart:
   - -0.6
   - 1.2
@@ -9196,6 +9203,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.44999945
       objectReference: {fileID: 0}
+    - target: {fileID: 2050687496738792008, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ef0f65f3539541e49b1c11e268a5e161, type: 2}
+    - target: {fileID: 2050687496738792008, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8720521984126137462, guid: ef0f65f3539541e49b1c11e268a5e161, type: 2}
     - target: {fileID: 2074962238768998434, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.796
@@ -9266,7 +9281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -9286,15 +9301,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[1]
-      value: Hab keine Angst.
+      value: Hallo Nora.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[2]
-      value: Aber leider ist mein Spiel noch nicht bereit.
+      value: Hab keine Angst.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[3]
-      value: "Komm bitte sp\xE4ter wieder..."
+      value: Aber leider ist mein Spiel noch nicht bereit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences1.Array.data[4]
+      value: Komm bitte spaeter wieder...
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15380,7 +15399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   player: {fileID: 3779360}
-  cursor: {fileID: 0}
+  cursor: {fileID: 1331649879}
   room: 1
   objectsInRoom: 0
   resetObjects: 0
@@ -15795,7 +15814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[0]
@@ -15803,15 +15822,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[1]
-      value: Bist du traurig?
+      value: Hallo Nora.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[2]
-      value: leider ist mein Spiel noch nicht fertig.
+      value: Bist du traurig?
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[3]
-      value: "Komm bitte sp\xE4ter wieder."
+      value: Leider ist mein Spiel noch nicht fertig.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences1.Array.data[4]
+      value: Komm bitte spaeter wieder.
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17386,7 +17409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   player: {fileID: 3779360}
-  cursor: {fileID: 0}
+  cursor: {fileID: 1331649879}
   room: 4
   objectsInRoom: 0
   resetObjects: 0
@@ -18947,7 +18970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[0]
@@ -18955,15 +18978,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[1]
-      value: "Du siehst aus, als w\xE4re dir etwas unangenehm."
+      value: Hallo Nora.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[2]
-      value: Leider ist mein Spiel noch nicht fertig.
+      value: Du siehst aus, als waere dir etwas unangenehm.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[3]
-      value: "Bitte komm sp\xE4ter nochmal vorbei."
+      value: Leider ist mein Spiel noch nicht fertig.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences1.Array.data[4]
+      value: Bitte komm spaeter nochmal vorbei.
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25255,7 +25282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences2.Array.size
@@ -25263,7 +25290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences3.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[0]
@@ -25271,18 +25298,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[1]
-      value: "Du siehst w\xFCtend aus."
+      value: Hallo Nora.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[2]
-      value: "Ich hab hier Ger\xFCmpel, das ich nicht mehr brauche."
+      value: Du siehst wuetend aus.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[3]
-      value: 'Wenn du willst... '
+      value: Ich hab hier Geruempel, das ich nicht mehr brauche.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences1.Array.data[4]
+      value: 'Wenn du willst... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences1.Array.data[5]
       value: kannst du dich damit ein wenig austoben.
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
@@ -25291,7 +25322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences2.Array.data[1]
-      value: "Wenn du es dir anders \xFCberlegst..."
+      value: Wenn du es dir anders ueberlegst...
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences2.Array.data[2]
@@ -25303,19 +25334,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: sentences3.Array.data[1]
-      value: "M\xF6chtest du dich jetzt austoben?"
+      value: Hallo Nora.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588851514094047394, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: sentences3.Array.data[2]
+      value: Moechtest du dich jetzt austoben?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6562
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6562
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.084947
+      value: 2.304
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0294676
+      value: 4.887
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49999985
+      value: -0.46937
       objectReference: {fileID: 0}
     - target: {fileID: 4827151616052412476, guid: 2b407bb257bdb78498cce5f154c26a68, type: 3}
       propertyPath: m_LocalRotation.w

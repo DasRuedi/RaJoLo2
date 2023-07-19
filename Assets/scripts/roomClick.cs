@@ -51,6 +51,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                cam.GetComponent<cameraMovement>().getDist = true;
                 player.GetComponent<playerMovement>().getRoom = true;
                 cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
@@ -64,6 +65,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                cam.GetComponent<cameraMovement>().getDist = true;
                 player.GetComponent<playerMovement>().getRoom = true;
                 cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
@@ -77,6 +79,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = true;
                 cam.GetComponent<cameraMovement>().inRoom4 = false;
                 cam.GetComponent<cameraMovement>().repos = true;
+                cam.GetComponent<cameraMovement>().getDist = true;
                 player.GetComponent<playerMovement>().getRoom = true;
                 cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();
@@ -90,6 +93,7 @@ public class roomClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
                 cam.GetComponent<cameraMovement>().inRoom3 = false;
                 cam.GetComponent<cameraMovement>().inRoom4 = true;
                 cam.GetComponent<cameraMovement>().repos = true;
+                cam.GetComponent<cameraMovement>().getDist = true;
                 player.GetComponent<playerMovement>().getRoom = true;
                 cursor.GetComponent<CursorManager>().jitter = false;
                 player.GetComponent<playerMovement>().ResetAnim();

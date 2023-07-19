@@ -15,6 +15,7 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
     public bool startButton;
     public bool controlButton;
     public bool endButton;
+    public bool backButton;
 
     public bool ok;
     public bool delete;
@@ -95,6 +96,16 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
         {
             mainMenu.GetComponent<mainMenuManager>().controls = true;
             mainMenu.GetComponent<mainMenuManager>().moveLeft = true;
+        }
+        if (backButton == true)
+        {
+            if (mainMenu.GetComponent<mainMenuManager>().controls == true)
+            {
+                if (mainMenu.GetComponent<mainMenuManager>().moveLeft == false)
+                {
+                    mainMenu.GetComponent<mainMenuManager>().moveRight = true;
+                }
+            }
         }
 
         if (ok == true)

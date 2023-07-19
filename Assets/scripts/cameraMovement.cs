@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class cameraMovement : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class cameraMovement : MonoBehaviour
 
     public float baseSpeed;
     float speed;
+
+    public float panSpeed;
+    public float panBaseSpeed;
+    public float panStartDist;
+    public float panCurrDist;
+    public float panDistPercent;
+    public Vector3 targetPos;
+    public bool getDist;
 
     float limitLeft;
     float limitRight;
@@ -56,6 +65,8 @@ public class cameraMovement : MonoBehaviour
     {
 
         Debug.Log("coming from " + progressManager.comingFrom);
+
+        PanSpeed();
 
         if (Input.GetKey("w"))
         {
@@ -114,6 +125,7 @@ public class cameraMovement : MonoBehaviour
                     inRoom3 = false;
                     inRoom4 = false;
                     repos = true;
+                    getDist = true;
                 }
 
             }
@@ -142,11 +154,18 @@ public class cameraMovement : MonoBehaviour
 
         if (onStart == true)
         {
-            if (transform.position != startPos && repos == true)
+            if (repos == true)
             {
-                transform.position = startPos;
-                currPos = startPos;
-                repos = false;
+                if (transform.position != startPos)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, startPos, Time.deltaTime * panSpeed);
+                }
+                if (transform.position == startPos)
+                {
+                    transform.position = startPos;
+                    repos = false;
+                }
+
             }
 
             speed = baseSpeed * 2;
@@ -167,11 +186,20 @@ public class cameraMovement : MonoBehaviour
 
         if (inRoom1 == true)
         {
-            if (transform.position != room1 && repos == true)
+            if (repos == true)
             {
-                transform.position = room1;
-                currPos = room1;
-                repos = false;
+                if (transform.position != room1)
+                {
+                    if (transform.position != room1)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, room1, Time.deltaTime * panSpeed);
+                    }
+                    if (transform.position == room1)
+                    {
+                        transform.position = room1;
+                        repos = false;
+                    }
+                }
             }
 
             speed = baseSpeed;
@@ -190,11 +218,24 @@ public class cameraMovement : MonoBehaviour
 
         if (inRoom2 == true)
         {
-            if (transform.position != room2 && repos == true)
+            if (repos == true)
             {
-                transform.position = room2;
-                currPos = room2;
-                repos = false;
+                if (transform.position != room2)
+                {
+                    if (transform.position != room2)
+                    {
+                        if (transform.position != room2)
+                        {
+                            transform.position = Vector3.MoveTowards(transform.position, room2, Time.deltaTime * panSpeed);
+                        }
+                        if (transform.position == room2)
+                        {
+                            transform.position = room2;
+                            repos = false;
+                        }
+                    }
+                }
+
             }
 
             speed = baseSpeed;
@@ -210,13 +251,23 @@ public class cameraMovement : MonoBehaviour
             room4box.SetActive(true);
             progressManager.comingFrom = 0;
         }
+
         if (inRoom3 == true)
         {
-            if (transform.position != room3 && repos == true)
+            if (repos == true)
             {
-                transform.position = room3;
-                currPos = room3;
-                repos = false;
+                if (transform.position != room3)
+                {
+                    if (transform.position != room3)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, room3, Time.deltaTime * panSpeed);
+                    }
+                    if (transform.position == room3)
+                    {
+                        transform.position = room3;
+                        repos = false;
+                    }
+                }
             }
 
             speed = baseSpeed;
@@ -232,25 +283,36 @@ public class cameraMovement : MonoBehaviour
             room4box.SetActive(true);
             progressManager.comingFrom = 0;
         }
+
         if (inRoom4 == true)
         {
-            if (player.GetComponent<playerMovement>().transform.position.y > -2)
+            if (repos == true)
             {
-                if (transform.position != room4a && repos == true)
+                if (player.GetComponent<playerMovement>().transform.position.y > -2)
                 {
-                    transform.position = room4a;
-                    currPos = room4a;
-                    repos = false;
+                    if (transform.position != room4a)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, room4a, Time.deltaTime * panSpeed);
+                    }
+                    if (transform.position == room4a)
+                    {
+                        transform.position = room4a;
+                        repos = false;
+                    }
                 }
-            }
-            if (player.GetComponent<playerMovement>().transform.position.y < -2)
-            {
-                if (transform.position != room4b && repos == true)
+                if (player.GetComponent<playerMovement>().transform.position.y < -2)
                 {
-                    transform.position = room4b;
-                    currPos = room4b;
-                    repos = false;
+                    if (transform.position != room4b)
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, room4b, Time.deltaTime * panSpeed);
+                    }
+                    if (transform.position == room4b)
+                    {
+                        transform.position = room4b;
+                        repos = false;
+                    }
                 }
+
             }
 
             speed = baseSpeed;
@@ -268,4 +330,84 @@ public class cameraMovement : MonoBehaviour
             progressManager.comingFrom = 0;
         }
     }
+
+    public void PanSpeed()
+    {
+        if (repos == false)
+        {
+            panSpeed = panBaseSpeed;
+        }
+
+        if (repos == true)
+        {
+            if (onStart == true)
+            {
+                targetPos = startPos;
+
+                if (getDist == true)
+                {
+                    panStartDist = Vector3.Distance(transform.position, targetPos);
+                    getDist = false;
+                }
+
+                panCurrDist = Vector3.Distance(transform.position, targetPos);
+
+                panDistPercent = panCurrDist / panStartDist;
+
+                panSpeed = ((panBaseSpeed * panDistPercent)*3) + 4;
+            }
+
+            if (inRoom1 == true || inRoom2 == true || inRoom3 == true || inRoom4 == true)
+            {
+                if (getDist == true)
+                {
+                    if (inRoom1 == true)
+                    {
+                        targetPos = room1;
+                        panStartDist = Vector3.Distance(transform.position, targetPos);
+                    }
+                    if (inRoom2 == true)
+                    {
+                        targetPos = room2;
+                        panStartDist = Vector3.Distance(transform.position, targetPos);
+                    }
+                    if (inRoom3 == true)
+                    {
+                        targetPos = room3;
+                        panStartDist = Vector3.Distance(transform.position, targetPos);
+                    }
+                    if (inRoom4 == true)
+                    {
+                        if (player.GetComponent<playerMovement>().transform.position.y > -2)
+                        {
+                            targetPos = room4a;
+                            panStartDist = Vector3.Distance(transform.position, targetPos);
+                        }
+                        if (player.GetComponent<playerMovement>().transform.position.y < -2)
+                        {
+                            targetPos = room4b;
+                            panStartDist = Vector3.Distance(transform.position, targetPos);
+                        }
+                    }
+                    getDist = false;
+                }
+
+                panCurrDist = Vector3.Distance(transform.position, targetPos);
+
+                panDistPercent = panCurrDist / panStartDist;
+
+                if (panStartDist > 10)
+                {
+                    panSpeed = ((panBaseSpeed * panDistPercent) * 3) + 4;
+                }
+                if (panStartDist < 10)
+                {
+                    panSpeed = ((panBaseSpeed * panDistPercent) * 2) + 2;
+                }
+            }
+
+
+        }
+    }
+
 }

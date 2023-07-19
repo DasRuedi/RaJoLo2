@@ -31,6 +31,11 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
+        if (anger == false)
+        {
+            Cursor.SetCursor(cursorTexture[spriteChoice], cursorHotspot, CursorMode.Auto);
+        }
+
         if (anger == true)
         {
             if (paper.GetComponent<paperClickEvent>().drawing == false)
