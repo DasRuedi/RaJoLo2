@@ -58,6 +58,7 @@ public class cameraMovement : MonoBehaviour
     {
         onStart = true;
         repos = true;
+        FindObjectOfType<AudioManager>().Play("outside");
     }
 
     // Update is called once per frame
@@ -119,6 +120,11 @@ public class cameraMovement : MonoBehaviour
             {
                 if (onStart == false)
                 {
+                    FindObjectOfType<AudioManager>().Play("outside");
+                    FindObjectOfType<AudioManager>().StopPlaying("shame");
+                    FindObjectOfType<AudioManager>().StopPlaying("anger");
+                    FindObjectOfType<AudioManager>().StopPlaying("fear");
+                    FindObjectOfType<AudioManager>().StopPlaying("sad");
                     onStart = true;
                     inRoom1 = false;
                     inRoom2 = false;
@@ -188,6 +194,11 @@ public class cameraMovement : MonoBehaviour
         {
             if (repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("anger");
+                FindObjectOfType<AudioManager>().Play("fear");
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().StopPlaying("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (transform.position != room1)
                 {
                     if (transform.position != room1)
@@ -220,6 +231,11 @@ public class cameraMovement : MonoBehaviour
         {
             if (repos == true)
             {
+                FindObjectOfType<AudioManager>().Play("anger");
+                FindObjectOfType<AudioManager>().StopPlaying("fear");
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().StopPlaying("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (transform.position != room2)
                 {
                     if (progressManager.comingFrom == 2)
@@ -266,6 +282,11 @@ public class cameraMovement : MonoBehaviour
         {
             if (repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("fear");
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().StopPlaying("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("anger");
+                FindObjectOfType<AudioManager>().Play("sad");
                 if (transform.position != room3)
                 {
                     if (transform.position != room3)
@@ -298,6 +319,11 @@ public class cameraMovement : MonoBehaviour
         {
             if (repos == true)
             {
+                FindObjectOfType<AudioManager>().StopPlaying("fear");
+                FindObjectOfType<AudioManager>().StopPlaying("anger");
+                FindObjectOfType<AudioManager>().Play("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (player.GetComponent<playerMovement>().transform.position.y > -2)
                 {
                     if (transform.position != room4a)

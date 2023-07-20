@@ -868,8 +868,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Wind3
     clip: {fileID: 8300000, guid: 816ecf790da23a9428a01912a919fe27, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 1.5
+    pitch: 2.3
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1420701543

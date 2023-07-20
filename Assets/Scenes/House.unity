@@ -17016,7 +17016,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: fear
-    clip: {fileID: 8300000, guid: c6bd6f9978e05b349944cf6e7daeb809, type: 3}
+    clip: {fileID: 8300000, guid: 6d5841185ac078b48834b5b34667b94c, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -17028,22 +17028,34 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: shame
-    clip: {fileID: 8300000, guid: 14e844a01389ed54eb440acd4fdf979e, type: 3}
+    clip: {fileID: 8300000, guid: e1610cf4b3b015a46a384e46d845a650, type: 3}
     volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: sad
-    clip: {fileID: 8300000, guid: 538eff4ffa6a7644daf3557b77d5d666, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 94980d18bb196094b8f210d5638a0527, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: outside
-    clip: {fileID: 8300000, guid: 29fdda112031f7b40a4827f5e49c67e4, type: 3}
+    clip: {fileID: 8300000, guid: 2cfd942e0ac0880458a40276d2ce6755, type: 3}
     volume: 0.2
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: anger
+    clip: {fileID: 8300000, guid: 839e27bd2d455e54e86f1767e4357b7b, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: eh
+    clip: {fileID: 8300000, guid: b178a9063f5746c46a4c135b664d7739, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1001 &1587567580
 PrefabInstance:
