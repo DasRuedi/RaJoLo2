@@ -347,7 +347,11 @@ MonoBehaviour:
   mood: {fileID: 759268269}
   breath: {fileID: 0}
   cursor: {fileID: 0}
+  mainMenu: {fileID: 0}
   startButton: 0
+  controlButton: 0
+  endButton: 0
+  backButton: 0
   ok: 0
   delete: 0
   endBreath: 0
@@ -803,6 +807,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  gameManager: {fileID: 0}
+  okButton: {fileID: 0}
+  deleteButton: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 3ac8c2287cbda8d49b52eaff83ec017c, type: 3}
   - {fileID: 21300000, guid: fd8da577b3edfff4b86380cef8f2aa23, type: 3}
@@ -812,10 +819,14 @@ MonoBehaviour:
   house: 0
   bubble: 0
   anger: 1
+  delete: 0
+  ok: 0
   swapTime: 0
   swapRate: 0.2
   smolInstruction: 1
   bigInstruction: 0
+  startPos: {x: 0, y: 0, z: 0}
+  inactPos: {x: 0, y: 0, z: 0}
 --- !u!212 &668359651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1247,7 +1258,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 20e2e1316f910144791a140160b00c9a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9009434, b: 0.92600805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1266,8 +1277,8 @@ Transform:
   m_GameObject: {fileID: 1228659461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.63, y: 3.63, z: 3.63}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 4, y: 3.63, z: 3.63}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -1728,7 +1739,11 @@ MonoBehaviour:
   mood: {fileID: 0}
   breath: {fileID: 0}
   cursor: {fileID: 1587793149}
+  mainMenu: {fileID: 0}
   startButton: 0
+  controlButton: 0
+  endButton: 0
+  backButton: 0
   ok: 1
   delete: 0
   endBreath: 0
@@ -1875,7 +1890,11 @@ MonoBehaviour:
   mood: {fileID: 0}
   breath: {fileID: 0}
   cursor: {fileID: 1587793149}
+  mainMenu: {fileID: 0}
   startButton: 0
+  controlButton: 0
+  endButton: 0
+  backButton: 0
   ok: 0
   delete: 1
   endBreath: 0

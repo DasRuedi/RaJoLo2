@@ -29,6 +29,9 @@ public class bubbles : MonoBehaviour
     public float scale;
     public float growth;
 
+    public bool popping;
+    public bool setPop;
+
 
     void Start()
     {
@@ -90,10 +93,11 @@ public class bubbles : MonoBehaviour
 
         }
 
-        if (lifeTime >= lifeSpan - popTime)
+        if (lifeTime >= lifeSpan - popTime && popping == false)
         {
-            transform.localScale = new Vector3(scale, scale, scale);
-            spriteChoice = 3;
+            setPop = true;
+            popping = true;
+
             /*if(popChoice == 1)
             {
                 FindObjectOfType<AudioManager>().Play("bubblePop");
@@ -111,7 +115,18 @@ public class bubbles : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("bubblePop4");
             }*/
 
-            
+        }
+
+        if (popping == true)
+        {
+            if (setPop == true)
+            {
+                lifeTime = lifeSpan - popTime;
+                setPop = false;
+            }
+
+            transform.localScale = new Vector3(scale, scale, scale);
+            spriteChoice = 3;
         }
 
         if (lifeTime >= lifeSpan)

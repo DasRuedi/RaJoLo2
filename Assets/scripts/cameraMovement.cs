@@ -222,17 +222,27 @@ public class cameraMovement : MonoBehaviour
             {
                 if (transform.position != room2)
                 {
-                    if (transform.position != room2)
+                    if (progressManager.comingFrom == 2)
+                    {
+                        transform.position = room2;
+                        repos = false;
+                    }
+
+                    if (progressManager.comingFrom != 2)
                     {
                         if (transform.position != room2)
                         {
-                            transform.position = Vector3.MoveTowards(transform.position, room2, Time.deltaTime * panSpeed);
+                            if (transform.position != room2)
+                            {
+                                transform.position = Vector3.MoveTowards(transform.position, room2, Time.deltaTime * panSpeed);
+                            }
+                            if (transform.position == room2)
+                            {
+                                transform.position = room2;
+                                repos = false;
+                            }
                         }
-                        if (transform.position == room2)
-                        {
-                            transform.position = room2;
-                            repos = false;
-                        }
+
                     }
                 }
 

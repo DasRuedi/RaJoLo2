@@ -8,6 +8,8 @@ public class SeifenTunk : MonoBehaviour
 {
     public Sprite[] sprites;
 
+    public GameObject bubbleBlow;
+
     public int spriteChoice;
 
     public float spriteTime;
@@ -90,6 +92,7 @@ public class SeifenTunk : MonoBehaviour
             }
             if (transform.position.y <= inactPos.y)
             {
+                bubbleBlow.GetComponent<ringGrow>().bubblable = true;
                 inactive = true;
                 proceed = false;
             }

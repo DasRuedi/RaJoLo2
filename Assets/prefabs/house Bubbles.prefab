@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8944941958035506633}
   - component: {fileID: 4176487887249747335}
-  - component: {fileID: 1253445085461756274}
-  - component: {fileID: 732539197500120122}
-  - component: {fileID: 6935624987612535379}
+  - component: {fileID: 3155525857877037740}
+  - component: {fileID: -3651532226797463207}
+  - component: {fileID: 3672401854265981755}
   m_Layer: 0
-  m_Name: Seifenblase3
+  m_Name: house Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4890475205523881255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1253445085461756274
+--- !u!114 &3155525857877037740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,30 +96,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4890475205523881255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dfadc4f93b61da45b312f06ae23774e, type: 3}
+  m_Script: {fileID: 11500000, guid: d796374d0d4e0f541879d6b65288eca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: fe560d1cb0d8df14ab4990da5a1aba29, type: 3}
-  - {fileID: 21300000, guid: 1c297d6433996f04f9fa6c33a9c6d7f3, type: 3}
   - {fileID: 21300000, guid: da811159fc51ae844a7e0d47e40d8a50, type: 3}
+  - {fileID: 21300000, guid: 1c297d6433996f04f9fa6c33a9c6d7f3, type: 3}
+  - {fileID: 21300000, guid: fe560d1cb0d8df14ab4990da5a1aba29, type: 3}
   - {fileID: 21300000, guid: af851ace4c98bb3459296f1f57047ebb, type: 3}
   spriteChoice: 0
-  popChoice: 0
   speed: 0
   lifeTime: 0
   lifeSpan: 0
   popTime: 0.1
-  blowTime: 0.4
-  getSpeed: 1
   movementX: 0
-  blowMovementX: 0
   movementY: 0
-  blowMovementY: 0
-  blowScale: 0
+  movementZ: 0
   scale: 0
-  growth: 0
---- !u!114 &732539197500120122
+--- !u!114 &-3651532226797463207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d003933b7298824ca9b52888da2e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigame: 1
-  house: 0
---- !u!65 &6935624987612535379
+  minigame: 0
+  house: 1
+--- !u!65 &3672401854265981755
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
