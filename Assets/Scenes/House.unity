@@ -16981,8 +16981,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: sad
-    clip: {fileID: 8300000, guid: 538eff4ffa6a7644daf3557b77d5d666, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 94980d18bb196094b8f210d5638a0527, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -16994,9 +16994,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: anger
     clip: {fileID: 8300000, guid: 839e27bd2d455e54e86f1767e4357b7b, type: 3}
-    volume: 0.2
+    volume: 0.3
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: eh
+    clip: {fileID: 8300000, guid: b178a9063f5746c46a4c135b664d7739, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1001 &1587567580
 PrefabInstance:

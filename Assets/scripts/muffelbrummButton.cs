@@ -41,6 +41,7 @@ public class muffelbrummButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
             {
                 if(muffelBody.GetComponent<muffelbrumm>().speaking == false)
                 {
+                    FindObjectOfType<AudioManager>().Play("eh");
                     FindObjectOfType<AudioManager>().Play("MuffelSound1");
                 }
 

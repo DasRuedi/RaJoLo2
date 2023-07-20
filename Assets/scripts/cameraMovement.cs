@@ -124,6 +124,7 @@ public class cameraMovement : MonoBehaviour
                     FindObjectOfType<AudioManager>().StopPlaying("shame");
                     FindObjectOfType<AudioManager>().StopPlaying("anger");
                     FindObjectOfType<AudioManager>().StopPlaying("fear");
+                    FindObjectOfType<AudioManager>().StopPlaying("sad");
                     onStart = true;
                     inRoom1 = false;
                     inRoom2 = false;
@@ -197,6 +198,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("fear");
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (transform.position != room1)
                 {
                     if (transform.position != room1)
@@ -233,6 +235,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopPlaying("fear");
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (transform.position != room2)
                 {
                     if (transform.position != room2)
@@ -273,6 +276,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("anger");
+                FindObjectOfType<AudioManager>().Play("sad");
                 if (transform.position != room3)
                 {
                     if (transform.position != room3)
@@ -309,6 +313,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopPlaying("anger");
                 FindObjectOfType<AudioManager>().Play("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
+                FindObjectOfType<AudioManager>().StopPlaying("sad");
                 if (player.GetComponent<playerMovement>().transform.position.y > -2)
                 {
                     if (transform.position != room4a)
