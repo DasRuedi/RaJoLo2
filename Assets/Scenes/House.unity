@@ -17017,9 +17017,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: fear
     clip: {fileID: 8300000, guid: 6d5841185ac078b48834b5b34667b94c, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: kuckuck
     clip: {fileID: 8300000, guid: 0edd90bafc6398a49a13e22684dae397, type: 3}
@@ -17031,13 +17031,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e1610cf4b3b015a46a384e46d845a650, type: 3}
     volume: 0.4
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: sad
     clip: {fileID: 8300000, guid: 94980d18bb196094b8f210d5638a0527, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: outside
     clip: {fileID: 8300000, guid: 2cfd942e0ac0880458a40276d2ce6755, type: 3}
@@ -17056,6 +17056,12 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: happy
+    clip: {fileID: 8300000, guid: 1ca42a9ac49476048a0a61d67e054f45, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
 --- !u!1001 &1587567580
 PrefabInstance:
@@ -25950,6 +25956,26 @@ PrefabInstance:
     - target: {fileID: 5888055010243624948, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110365146309010072, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1762231
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110365146309010072, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18767758
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110365146309010072, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1762231
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110365146309010072, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1329
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110365146309010072, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6257497779886153985, guid: 8bc99ae83917db147b0ef1795d36d586, type: 3}
       propertyPath: m_RootOrder

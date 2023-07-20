@@ -502,7 +502,7 @@ MonoBehaviour:
   sounds:
   - name: Menu
     clip: {fileID: 8300000, guid: 85a12c58669a2bd43821d72b79170d28, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -514,7 +514,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: start
     clip: {fileID: 8300000, guid: e94274f9b6309e74a8dd07940affd4a7, type: 3}
-    volume: 0.4
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: beenden
+    clip: {fileID: 8300000, guid: f59673274654bc94ab7f2edfa28afa6b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Steuerung
+    clip: {fileID: 8300000, guid: f59673274654bc94ab7f2edfa28afa6b, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

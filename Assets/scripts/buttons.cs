@@ -94,11 +94,13 @@ public class buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IP
         
         if (controlButton == true)
         {
+            FindObjectOfType<AudioManager>().Play("Steuerung");
             mainMenu.GetComponent<mainMenuManager>().controls = true;
             mainMenu.GetComponent<mainMenuManager>().moveLeft = true;
         }
         if (backButton == true)
         {
+            FindObjectOfType<AudioManager>().Play("beenden");
             if (mainMenu.GetComponent<mainMenuManager>().controls == true)
             {
                 if (mainMenu.GetComponent<mainMenuManager>().moveLeft == false)

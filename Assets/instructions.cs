@@ -9,9 +9,15 @@ public class instructions : MonoBehaviour
     public GameObject gameManager;
     public GameObject okButton;
     public GameObject deleteButton;
+    public GameObject breath;
 
 
     public Sprite[] sprites;
+
+    public Sprite[] breatheIn;
+    public Sprite[] holdBreath;
+    public Sprite[] breatheOut;
+
     public int spriteChoice;
 
     public bool mainMenu;
@@ -40,33 +46,27 @@ public class instructions : MonoBehaviour
 
     void Update()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = sprites[spriteChoice];
 
-        if (house == true)
-        {
-            if (cam.GetComponent<cameraMovement>().onStart == true)
-            {
-                swapTime += Time.deltaTime;
-
-                if (swapTime >= swapRate)
-                {
-                    spriteChoice++;
-                    swapTime = 0;
-                }
-
-                if (spriteChoice >= 3)
-                {
-                    spriteChoice = 0;
-                }
-            }
-            if (cam.GetComponent<cameraMovement>().onStart == false)
-            {
-                spriteChoice = 3;
-            }
-        }
 
         if (bubble == true)
         {
+            if (breath.GetComponent<ringGrow>().instructionStep == 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
+            }
+            if (breath.GetComponent<ringGrow>().instructionStep == 1)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = breatheIn[spriteChoice];
+            }
+            if (breath.GetComponent<ringGrow>().instructionStep == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = holdBreath[spriteChoice];
+            }
+            if (breath.GetComponent<ringGrow>().instructionStep == 3)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = breatheOut[spriteChoice];
+            }
+
             swapTime += Time.deltaTime;
 
             if (swapTime >= swapRate)
@@ -85,9 +85,13 @@ public class instructions : MonoBehaviour
 
         if (anger == true)
         {
+
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[spriteChoice];
+
+
             if (smolInstruction == true)
             {
-                if (gameManager.GetComponent<miniGameManager>().state == GameState.DRAWING)
+                if (gameManager.GetComponent<miniGameManager>().state == GameState.DRAWING || gameManager.GetComponent<miniGameManager>().state == GameState.STARTING)
                 {
                     if (delete == false || ok == false)
                     {
@@ -155,7 +159,7 @@ public class instructions : MonoBehaviour
                     }
 
                 }
-                if (gameManager.GetComponent<miniGameManager>().state != GameState.DRAWING)
+                if (gameManager.GetComponent<miniGameManager>().state != GameState.DRAWING && gameManager.GetComponent<miniGameManager>().state != GameState.STARTING)
                 {
                     transform.position = inactPos;
                 }

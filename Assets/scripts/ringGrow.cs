@@ -28,7 +28,6 @@ public class ringGrow : MonoBehaviour
     public float holdTime;
     public float blowTime;
 
-    public bool instructionsGiven;
     public int instructionStep;
 
 
@@ -126,32 +125,21 @@ public class ringGrow : MonoBehaviour
 
         if (bubblable == true)
         {
-            if (instructionsGiven == false)
+            if (breatheIn == false && breatheOut == false)
             {
-                if (breatheIn == false && breatheOut == false)
-                {
-                    instructionStep = 1;
-                }
-
-                if (breatheIn == true)
-                {
-                    if (holdTime < 3.5f)
-                    {
-                        instructionStep = 2;
-                    }
-                    if (holdTime >= 3.5f)
-                    {
-                        instructionStep = 3;
-                    }
-                }
-                if (breatheOut == true)
-                {
-                    instructionsGiven = true;
-                }
+                instructionStep = 1;
             }
-            if (instructionsGiven == false)
+
+            if (breatheIn == true)
             {
-                instructionStep = 0;
+                if (holdTime < 3.5f)
+                {
+                    instructionStep = 2;
+                }
+                if (holdTime >= 3.5f)
+                {
+                    instructionStep = 3;
+                }
             }
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class cameraMovement : MonoBehaviour
 {
@@ -65,6 +66,15 @@ public class cameraMovement : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown("0"))
+        {
+            progressManager.angerGameDone = true;
+        }
+        if (Input.GetKeyDown("9"))
+        {
+            progressManager.angerGameDone = false;
+        }
+
         Debug.Log("coming from " + progressManager.comingFrom);
 
         PanSpeed();
@@ -125,6 +135,7 @@ public class cameraMovement : MonoBehaviour
                     FindObjectOfType<AudioManager>().StopPlaying("anger");
                     FindObjectOfType<AudioManager>().StopPlaying("fear");
                     FindObjectOfType<AudioManager>().StopPlaying("sad");
+                    FindObjectOfType<AudioManager>().StopPlaying("happy");
                     onStart = true;
                     inRoom1 = false;
                     inRoom2 = false;
@@ -133,27 +144,35 @@ public class cameraMovement : MonoBehaviour
                     repos = true;
                     getDist = true;
                 }
+                if (onStart == true)
+                {
+                    SceneManager.LoadScene("MainMenu");
+                }
 
             }
         }
 
         if (progressManager.comingFrom == 1)
         {
+            player.GetComponent<playerMovement>().idle = true;
             onStart = false;
             inRoom1 = true;
         }
         if (progressManager.comingFrom == 2)
         {
+            player.GetComponent<playerMovement>().idle = true;
             onStart = false;
             inRoom2 = true;
         }
         if (progressManager.comingFrom == 3)
         {
+            player.GetComponent<playerMovement>().idle = true;
             onStart = false;
             inRoom3 = true;
         }
         if (progressManager.comingFrom == 4)
         {
+            player.GetComponent<playerMovement>().idle = true;
             onStart = false;
             inRoom4 = true;
         }
@@ -199,6 +218,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("sad");
+                FindObjectOfType<AudioManager>().StopPlaying("happy");
                 if (transform.position != room1)
                 {
                     if (transform.position != room1)
@@ -231,11 +251,21 @@ public class cameraMovement : MonoBehaviour
         {
             if (repos == true)
             {
-                FindObjectOfType<AudioManager>().Play("anger");
+                if (progressManager.angerGameDone == false)
+                {
+                    FindObjectOfType<AudioManager>().Play("anger");
+                    FindObjectOfType<AudioManager>().StopPlaying("happy");
+                }
+                if (progressManager.angerGameDone == true)
+                {
+                    FindObjectOfType<AudioManager>().Play("happy");
+                    FindObjectOfType<AudioManager>().StopPlaying("anger");
+                }
                 FindObjectOfType<AudioManager>().StopPlaying("fear");
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("sad");
+
                 if (transform.position != room2)
                 {
                     if (progressManager.comingFrom == 2)
@@ -287,6 +317,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().StopPlaying("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("anger");
                 FindObjectOfType<AudioManager>().Play("sad");
+                FindObjectOfType<AudioManager>().StopPlaying("happy");
                 if (transform.position != room3)
                 {
                     if (transform.position != room3)
@@ -324,6 +355,7 @@ public class cameraMovement : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("shame");
                 FindObjectOfType<AudioManager>().StopPlaying("outside");
                 FindObjectOfType<AudioManager>().StopPlaying("sad");
+                FindObjectOfType<AudioManager>().StopPlaying("happy");
                 if (player.GetComponent<playerMovement>().transform.position.y > -2)
                 {
                     if (transform.position != room4a)

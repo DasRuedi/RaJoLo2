@@ -41,12 +41,15 @@ public class playerMovement : MonoBehaviour
     public bool afraidIdle;
     public bool sadIdle;
     public bool shameIdle;
+    public bool happyIdle;
 
     public bool angryWalk;
     public bool sadWalk;
     public bool shameWalk;
+    public bool happyWalk;
 
     public bool climbDown;
+    public bool happyClimbDown;
     public bool climbUp;
 
 
@@ -155,11 +158,23 @@ public class playerMovement : MonoBehaviour
                         // Hier wird Idle ersetzt durch die erste Animation
                         // In diesem Fall kommt Nora von oben
                         // Idle -> climbDown
-                        if(idle == true)
+                        if (progressManager.angerGameDone == false)
                         {
-                            climbDown = true;
-                            idle = false;
+                            if (idle == true)
+                            {
+                                climbDown = true;
+                                idle = false;
+                            }
                         }
+                        if (progressManager.angerGameDone == true)
+                        {
+                            if (idle == true)
+                            {
+                                happyClimbDown = true;
+                                idle = false;
+                            }
+                        }
+
 
                         transform.position = enterRoom2a;
                         isMoving = true;
@@ -169,10 +184,21 @@ public class playerMovement : MonoBehaviour
                         // Hier wird Idle ersetzt durch die erste Animation
                         // In diesem Fall kommt Nora von rechts
                         // Idle -> angryWalk
-                        if(idle == true)
+                        if (progressManager.angerGameDone == false)
                         {
-                            angryWalk = true;
-                            idle = false;
+                            if (idle == true)
+                            {
+                                angryWalk = true;
+                                idle = false;
+                            }
+                        }
+                        if (progressManager.angerGameDone == true)
+                        {
+                            if (idle == true)
+                            {
+                                happyWalk = true;
+                                idle = false;
+                            }
                         }
 
                         transform.position = enterRoom2b;
@@ -234,14 +260,26 @@ public class playerMovement : MonoBehaviour
                     angryIdle = true;
                     climbDown = false;
                 }
+                if (happyClimbDown == true)
+                {
+                    happyIdle = true;
+                    happyClimbDown = false;
+                }
 
                 // Nora kommt von rechts?
                 // angryWalk -> angryIdle
-                if(angryWalk == true)
+
+                if (angryWalk == true)
                 {
                     angryIdle = true;
                     angryWalk = false;
                 }
+                if (happyWalk == true)
+                {
+                    happyIdle = true;
+                    happyWalk = false;
+                }
+
             }
         }
 
@@ -299,7 +337,7 @@ public class playerMovement : MonoBehaviour
             }
 
             
-            if (isMoving == false && currRoom == 1)
+            if (isMoving == false && currRoom == 3)
             {
                 // hier wird von der ersten zur zweiten animation gewechselt
                 // sadWalk -> sadIdle
@@ -421,7 +459,7 @@ public class playerMovement : MonoBehaviour
             }
 
             
-            if (isMoving == false && currRoom == 1)
+            if (isMoving == false && currRoom == 4)
             {
                 // hier wird von der ersten zur zweiten animation gewechselt
                 // shameWalk -> shameIdle
@@ -449,6 +487,7 @@ public class playerMovement : MonoBehaviour
             anim.SetBool("purpleClimb", false);
             anim.SetBool("bluewalk", false);
             anim.SetBool("yellowwalk", false);
+            anim.SetBool("happywalk", false);
             anim.SetBool("shame", false);
             anim.SetBool("sad", false);
             anim.SetBool("happy", false);
@@ -520,7 +559,24 @@ public class playerMovement : MonoBehaviour
             anim.SetBool("Idle", false);
         }
 
+        if (happyWalk == true)
+        {
+            anim.SetBool("happywalk", true);
+            anim.SetBool("Idle", false);
+        }
 
+        if (happyIdle == true)
+        {
+            anim.SetBool("happy", true);
+            anim.SetBool("happywalk", false);
+            anim.SetBool("happyClimb", false);
+        }
+
+        if (happyClimbDown == true)
+        {
+            anim.SetBool("happyClimb", true);
+            anim.SetBool("Idle", false);
+        }
 
     }
 
@@ -531,10 +587,13 @@ public class playerMovement : MonoBehaviour
         afraidIdle = false;
         sadIdle = false;
         shameIdle = false;
+        happyIdle = false;
         angryWalk = false;
         sadWalk = false;
         shameWalk = false;
+        happyWalk = false;
         climbDown = false;
+        happyClimbDown = false;
         climbUp = false;
     }
 }
