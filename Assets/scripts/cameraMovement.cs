@@ -144,11 +144,15 @@ public class cameraMovement : MonoBehaviour
                     repos = true;
                     getDist = true;
                 }
-                if (onStart == true)
+
+            }
+
+            if (onStart == true)
+            {
+                if (repos == false)
                 {
                     SceneManager.LoadScene("MainMenu");
                 }
-
             }
         }
 
